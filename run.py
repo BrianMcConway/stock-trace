@@ -16,4 +16,16 @@ meat_fish = SHEET.worksheet('meat_fish')
 
 data = meat_fish.get_all_values()
 
-print(data)
+#print(data)
+2
+def menu():
+    print("[1] Current Stock")
+    print("[2] Input New Items")
+    print("[3] Use Stock Items")
+    print("[4] Exit\n")
+
+menu()
+option = int(input("Please select an option from 1-4\n"))
+
+
+
