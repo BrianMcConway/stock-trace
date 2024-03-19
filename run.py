@@ -13,8 +13,15 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('stock-trace')
 
 meat_fish = SHEET.worksheet('meat_fish')
-
 data = meat_fish.get_all_values()
+fruit_veg = SHEET.worksheet('fruit_veg')
+data = meat_fish.get_all_values()
+dry_goods = SHEET.worksheet("dry_goods")
+data = dry_goods.get_all_values()
+chilled_goods = SHEET.worksheet('chilled_goods')
+data = chilled_goods.get_all_values()
+frozen_items = SHEET.worksheet('frozen_items')
+data = frozen_items.get_all_values()
 
 #print(data)
 print("----------------------------------\n") #Welcome message
@@ -54,14 +61,26 @@ def submenu_current(): #Submenu for current stock
             print(row)
     elif option == 2:
         print("Fruit & Veg")
+        data = fruit_veg.get_all_values()
+        for row in data:
+            print(row)
     elif option == 3:
         print("Dry Goods")
+        data = dry_goods.get_all_values()
+        for row in data:
+            print(row)
     elif option == 4:
         print("Chilled Goods")
+        data = chilled_goods.get_all_values()
+        for row in data:
+            print(row)
     elif option == 5:
         print("Frozen Items")
+        data = frozen_items.get_all_values()
+        for row in data:
+            print(row)
     elif option == 6:
-        print("Return to Current Stock Menu")
+        print("Return to Main Menu")
     else: print("Invalid Choice. Please enter a number between 1 & 6")
          
 main_menu()
