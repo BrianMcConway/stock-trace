@@ -30,12 +30,21 @@ def main_menu():
     print("----------------------------------\n")
     option = int(input("Please select an option from 1-3: \n"))
     if option==1:
-        print("Current Stock")
+        print("Current Stock:")
+        submenu_1()
     elif option==2:
         print("Input New Stock Items")
     elif option ==3:
         print("Use Stock Items")
     else: print("Invalid Choice. Please enter a number between 1 & 3")
+    
+def submenu_1():
+    print("1. Meat & Fish")
+    print("2. Fruit & Veg")
+    print("3. Dry Goods")
+    print("4. Chilled Goods")
+    print("5. Frozen Items")
+    print("6. Return to Main Menu")
     
          
 main_menu()
