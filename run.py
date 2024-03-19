@@ -17,15 +17,30 @@ meat_fish = SHEET.worksheet('meat_fish')
 data = meat_fish.get_all_values()
 
 #print(data)
-2
-def menu():
-    print("[1] Current Stock")
-    print("[2] Input New Items")
-    print("[3] Use Stock Items")
-    print("[4] Exit\n")
+print("----------------------------------\n")
+print("WELCOME TO STOCK-TRACE\n")
+print("----------------------------------\n")
 
-menu()
-option = int(input("Please select an option from 1-4\n"))
+def main_menu():
+    print("1. Current Stock")
+    print("2. Input New Items")
+    print("3. Use Stock Items\n")
+
+    
+    print("----------------------------------\n")
+    option = int(input("Please select an option from 1-3: \n"))
+    if option==1:
+        print("Current Stock")
+    elif option==2:
+        print("Input New Stock Items")
+    elif option ==3:
+        print("Use Stock Items")
+    else: print("Invalid Choice. Please enter a number between 1 & 3")
+    
+         
+main_menu()
+
+
 
 
 
