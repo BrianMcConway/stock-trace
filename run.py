@@ -43,45 +43,51 @@ def main_menu():   #Main Menu
         print("Input New Stock Items")
     elif option == 3:
         print("Use Stock Items")
-    else: print("Invalid Choice. Please enter a number between 1 & 3") #add letters as invalid choice
+    else: 
+        print("Invalid Choice. Please enter a number between 1 & 3") #add letters as invalid choice
     
 def submenu_current(): #Submenu for current stock
-    print("1. Meat & Fish")
-    print("2. Fruit & Veg")
-    print("3. Dry Goods")
-    print("4. Chilled Goods")
-    print("5. Frozen Items")
-    print("6. Return to Main Menu")
+    while True:
+        print("1. Meat & Fish")
+        print("2. Fruit & Veg")
+        print("3. Dry Goods")
+        print("4. Chilled Goods")
+        print("5. Frozen Items")
+        print("6. Return to Main Menu")
+        print("----------------------------------\n")
     
-    option = int(input("Please select an option from 1-6: \n")) #Input for submenu current stock
-    if option == 1:
-        print("Meat & Fish")
-        data = meat_fish.get_all_values()
-        for row in data:
-            print(row)
-    elif option == 2:
-        print("Fruit & Veg")
-        data = fruit_veg.get_all_values()
-        for row in data:
-            print(row)
-    elif option == 3:
-        print("Dry Goods")
-        data = dry_goods.get_all_values()
-        for row in data:
-            print(row)
-    elif option == 4:
-        print("Chilled Goods")
-        data = chilled_goods.get_all_values()
-        for row in data:
-            print(row)
-    elif option == 5:
-        print("Frozen Items")
-        data = frozen_items.get_all_values()
-        for row in data:
-            print(row)
-    elif option == 6:
-        print("Return to Main Menu")
-    else: print("Invalid Choice. Please enter a number between 1 & 6")
+        option = int(input("Please select an option from 1-6: \n")) #Input for submenu current stock
+        if option == 1:
+            print("Meat & Fish")
+            data = meat_fish.get_all_values()
+            for row in data:
+                print(row)
+        elif option == 2:
+            print("Fruit & Veg")
+            data = fruit_veg.get_all_values()
+            for row in data:
+                print(row)
+        elif option == 3:
+            print("Dry Goods")
+            data = dry_goods.get_all_values()
+            for row in data:
+                print(row)
+        elif option == 4:
+            print("Chilled Goods")
+            data = chilled_goods.get_all_values()
+            for row in data:
+                print(row)
+        elif option == 5:
+            print("Frozen Items")
+            data = frozen_items.get_all_values()
+            for row in data:
+                print(row)
+        elif option == 6:
+            print("Return to Main Menu")
+            main_menu()
+            break
+        else: 
+            print("Invalid Choice. Please enter a number between 1 & 6")
          
 main_menu()
 
