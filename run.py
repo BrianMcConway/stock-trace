@@ -83,7 +83,7 @@ def submenu_current(): #Submenu for current stock
             for row in data:
                 print(row)
         elif option == 6:
-            print("Return to Main Menu")
+            print("Return to Main Menu") #check this function for menu being added to list
             main_menu()
             break
         else: 
