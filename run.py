@@ -35,6 +35,7 @@ def main_menu():   # Main Menu
         submenu_current()
     elif option == 2:
         print("Input New Stock Items")
+        input_new_items()
     elif option == 3:
         print("Use Stock Items")
     else: 
@@ -93,7 +94,7 @@ def submenu_current(): # Submenu for current stock
             print("Invalid Choice. Please enter a number between 1 & 6")
             
 def input_new_items():
-    
+    while True:
         print("----------------------------------\n")
         print("1. Meat & Fish")
         print("2. Fruit & Veg")
@@ -104,5 +105,7 @@ def input_new_items():
         print("----------------------------------\n")
         
         option = input("Please select an option from 1-6: \n")
+        
+        
          
 main_menu()
