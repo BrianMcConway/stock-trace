@@ -24,6 +24,7 @@ print("WELCOME TO STOCK-TRACE\n")
 print("----------------------------------\n")
 
 def main_menu():   # Main Menu
+    print("----------------------------------\n")
     print("1. Current Stock")
     print("2. Input New Items")
     print("3. Use Stock Items\n")
@@ -53,7 +54,9 @@ def submenu_current(): # Submenu for current stock
         option = int(input("Please select an option from 1-6: \n")) # Input for submenu current stock
         
         if option == 1:
+            print("----------------------------------")
             print("Meat & Fish")
+            print("----------------------------------\n")
             data = meat_fish.get_all_values()
             for row in data:
                 print(row)
@@ -88,5 +91,18 @@ def submenu_current(): # Submenu for current stock
             break
         else: 
             print("Invalid Choice. Please enter a number between 1 & 6")
+            
+def input_new_items():
+    
+        print("----------------------------------\n")
+        print("1. Meat & Fish")
+        print("2. Fruit & Veg")
+        print("3. Dry Goods")
+        print("4. Chilled Goods")
+        print("5. Frozen Items")
+        print("6. Return to Main Menu")
+        print("----------------------------------\n")
+        
+        option = input("Please select an option from 1-6: \n")
          
 main_menu()
