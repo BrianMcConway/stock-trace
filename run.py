@@ -142,7 +142,7 @@ def add_stock(inventory_sheet):
 
       
 def use_stock_menu():
-    
+    while True:
         print("----------------------------------\n")
         print("1. Meat & Fish")
         print("2. Fruit & Veg")
@@ -170,5 +170,23 @@ def use_stock_menu():
             break
         else:
             print("Invalid Choice. Please enter a number between 1 & 6")
+            
+def use_stock(inventory_sheet):
+    item_name = input("Please enter item name:")
+    amount_to_use = int(input("Please enter the amount to use: "))
+    
+    cell = inventory_sheet.find(item_name)
+    
+    if cell:
+        current_amount = int(inventory_sheet.cell(cell.row, cell.col + 1).value)
+        
+        if current_amount >= amount_to_use:
+            new_amount = current_amount - amount_to_use
+            inventory_sheet.update_cell(cell.row, cell.col + 1, new_amount)
+            print(f"Used {amount_to_use} from {item_name}. New amount: {new_amount}")
+        else:
+            print("Error: Insufficient stock.")
+    else:
+        print(f"Item '{item_name}' not found in the category.")          
         
 main_menu()
