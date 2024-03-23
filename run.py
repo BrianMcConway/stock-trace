@@ -124,21 +124,26 @@ def input_new_menu():
             print("Invalid Choice. Please enter a number between 1 & 6")
             
 def add_stock(inventory_sheet):
-    item_name = input("Please enter item name:")
-    amount_to_add = int(input("Please enter the amount to add: "))
+    while True:
+        item_name = input("Please enter item name, or type 'exit' to go back to menu: ").lower()  # Convert input to lowercase
+        if item_name == "exit":
+            return  # Exit the function if the user enters "exit"
+        
+        amount_to_add = int(input("Please enter the amount to add: "))
+        
+        cell = inventory_sheet.find(item_name)
+        
+        if cell:
+            current_amount = int(inventory_sheet.cell(cell.row, cell.col + 1).value)
+            
+            new_amount = current_amount + amount_to_add
+            
+            inventory_sheet.update_cell(cell.row, cell.col + 1, new_amount)
+            
+            print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
+        else:
+            print(f"Item '{item_name}' not found in the category.")
     
-    cell = inventory_sheet.find(item_name)
-    
-    if cell:
-        current_amount = int(inventory_sheet.cell(cell.row, cell.col + 1).value)
-        
-        new_amount = current_amount + amount_to_add
-        
-        inventory_sheet.update_cell(cell.row, cell.col + 1, new_amount)
-        
-        print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
-    else:
-        print(f"Item '{item_name}' not found in the category.")
 
       
 def use_stock_menu():
@@ -172,7 +177,7 @@ def use_stock_menu():
             print("Invalid Choice. Please enter a number between 1 & 6")
             
 def use_stock(inventory_sheet):
-    item_name = input("Please enter item name:")
+    item_name = input("Please enter item name:").lower()
     amount_to_use = int(input("Please enter the amount to use: "))
     
     cell = inventory_sheet.find(item_name)
@@ -185,7 +190,7 @@ def use_stock(inventory_sheet):
             inventory_sheet.update_cell(cell.row, cell.col + 1, new_amount)
             print(f"Used {amount_to_use} from {item_name}. New amount: {new_amount}")
         else:
-            print("Error: Insufficient stock.")
+            print("Error: Insufficient stock!")
     else:
         print(f"Item '{item_name}' not found in the category.")          
         
