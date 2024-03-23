@@ -18,7 +18,6 @@ dry_goods = SHEET.worksheet("dry_goods")
 chilled_goods = SHEET.worksheet('chilled_goods')
 frozen_items = SHEET.worksheet('frozen_items')
 
-#print(data)
 print("----------------------------------\n") # Welcome message
 print("WELCOME TO STOCK-TRACE\n")
 print("----------------------------------\n")
@@ -106,6 +105,40 @@ def input_new_items():
         
         option = input("Please select an option from 1-6: \n")
         
+        if option == '1':
+            add_stock(meat_fish)
+        elif option == '2':
+            add_stock(fruit_veg)
+        elif option == '3':
+            add_stock(dry_goods)
+        elif option == '4':
+            add_stock(chilled_goods)
+        elif option == '5':
+            add_stock(frozen_items)
+        elif option == '6':
+            print("Return to Main Menu")
+            main_menu()
+            break
+        else:
+            print("Invalid Choice. Please enter a number between 1 & 6")
+            
+def add_stock(inventory_sheet):
+    item_name = input("Please enter item name:")
+    amount_to_add = int(input("Please enter the amount to add: "))
+    
+    cell = inventory_sheet.find(item_name)
+    
+    if cell:
+        current_amount = int(inventory_sheet.cell(cell.row, cell.col + 1).value)
         
+        new_amount = current_amount + amount_to_add
+        
+        inventory_sheet.update_cell(cell.row, cell.col + 1, new_amount)
+        
+        print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
+    else:
+        print(f"Item '{item_name}' not found in the category.")
+
+      
          
 main_menu()
