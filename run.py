@@ -34,9 +34,10 @@ def main_menu():   # Main Menu
         submenu_current()
     elif option == 2:
         print("Input New Stock Items")
-        input_new_items()
+        input_new_menu()
     elif option == 3:
         print("Use Stock Items")
+        use_stock_menu()
     else: 
         print("Invalid Choice. Please enter a number between 1 & 3") # add letters as invalid choice
     
@@ -92,7 +93,7 @@ def submenu_current(): # Submenu for current stock
         else: 
             print("Invalid Choice. Please enter a number between 1 & 6")
             
-def input_new_items():
+def input_new_menu():
     while True:
         print("----------------------------------\n")
         print("1. Meat & Fish")
@@ -140,5 +141,34 @@ def add_stock(inventory_sheet):
         print(f"Item '{item_name}' not found in the category.")
 
       
-         
+def use_stock_menu():
+    
+        print("----------------------------------\n")
+        print("1. Meat & Fish")
+        print("2. Fruit & Veg")
+        print("3. Dry Goods")
+        print("4. Chilled Goods")
+        print("5. Frozen Items")
+        print("6. Return to Main Menu")
+        print("----------------------------------\n")
+        
+        option = input("Please select an option from 1-6: \n")
+        
+        if option == '1':
+            use_stock(meat_fish)
+        elif option == '2':
+            use_stock(fruit_veg)
+        elif option == '3':
+            use_stock(dry_goods)
+        elif option == '4':
+            use_stock(chilled_goods)
+        elif option == '5':
+            use_stock(frozen_items)
+        elif option == '6':
+            print("Return to Main Menu")
+            main_menu()
+            break
+        else:
+            print("Invalid Choice. Please enter a number between 1 & 6")
+        
 main_menu()
