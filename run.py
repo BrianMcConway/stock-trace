@@ -134,11 +134,11 @@ def add_stock(inventory_sheet):
         cell = inventory_sheet.find(item_name)
         
         if cell:
-            current_amount = int(inventory_sheet.cell(cell.row, cell.col + 1).value)
+            current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
             
             new_amount = current_amount + amount_to_add
             
-            inventory_sheet.update_cell(cell.row, cell.col + 1, new_amount)
+            inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
             
             print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
         else:
@@ -191,7 +191,7 @@ def use_stock(inventory_sheet):
             
             if current_amount >= amount_to_use:
                 new_amount = current_amount - amount_to_use
-                inventory_sheet.update_cell(cell.row, cell.col + 1, new_amount)
+                inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
                 print(f"Used {amount_to_use} from {item_name}. New amount: {new_amount}")
             else:
                 print("Error: Insufficient stock.")
