@@ -49,7 +49,7 @@ def submenu_current(): # Submenu for current stock
         print("3. Dry Goods")
         print("4. Chilled Goods")
         print("5. Frozen Items")
-        print("6. Return to Main Menu")
+        print("6. Return to Main Menu\n")
         print("----------------------------------\n")
         
         option = int(input("Please select an option from 1-6: \n")) # Input for submenu current stock
@@ -60,31 +60,39 @@ def submenu_current(): # Submenu for current stock
             print("----------------------------------\n")
             data = meat_fish.get_all_values()
             for row in data:
-                print(row)
+                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press any key to return to the Current Stock Menu\n")
         elif option == 2:
+            print("----------------------------------")
             print("Fruit & Veg")
+            print("----------------------------------\n")
             data = fruit_veg.get_all_values()
             for row in data:
-                print(row)
+                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press any key to return to the Current Stock Menu\n")
         elif option == 3:
+            print("----------------------------------")
             print("Dry Goods")
+            print("----------------------------------\n")
             data = dry_goods.get_all_values()
             for row in data:
-                print(row)
+                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press any key to return to the Current Stock Menu\n")
         elif option == 4:
+            print("----------------------------------")
             print("Chilled Goods")
+            print("----------------------------------\n")
             data = chilled_goods.get_all_values()
             for row in data:
-                print(row)
+                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press any key to return to the Current Stock Menu\n")
         elif option == 5:
+            print("----------------------------------")
             print("Frozen Items")
+            print("----------------------------------\n")
             data = frozen_items.get_all_values()
             for row in data:
-                print(row)
+                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press any key to return to the Current Stock Menu\n")
         elif option == 6:
             print("Return to Main Menu")
@@ -199,3 +207,4 @@ def use_stock(inventory_sheet):
             print(f"Item '{item_name}' not found in the category.")  
         
 main_menu()
+
