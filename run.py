@@ -39,7 +39,7 @@ def main_menu():   # Main Menu
         print("Use Stock Items")
         use_stock_menu()
     else: 
-        print("Invalid Choice. Please enter a number between 1 & 3\n ") # add letters as invalid choice
+        print("Invalid Choice!\n Please enter a number between 1 & 3\n ") # add letters as invalid choice
     
 def submenu_current(): # Submenu for current stock
     while True:
@@ -99,7 +99,7 @@ def submenu_current(): # Submenu for current stock
             main_menu()
             break
         else: 
-            print("Invalid Choice. Please enter a number between 1 & 6: \n")
+            print("Invalid Choice!\n Please enter a number between 1 & 6: \n")
             
 def input_new_menu():
     while True:
@@ -133,7 +133,7 @@ def input_new_menu():
             
 def add_stock(inventory_sheet):
     while True:
-        item_name = input("Please enter item name, or type 'exit' to go back to menu: ").lower()  # Convert input to lowercase
+        item_name = input("Please enter item name,\n or type 'exit' to go back to menu: ").lower()  # Convert input to lowercase
         if item_name == "exit":
             return  # Exit the function if the user enters "exit"
         
@@ -186,7 +186,7 @@ def use_stock_menu():
             
 def use_stock(inventory_sheet):
     while True:
-        item_name = input("Please enter item name, or type 'exit' to go back to menu: ").lower()
+        item_name = input("Please enter item name,/n or type 'exit' to go back to menu: ").lower()
         if item_name == "exit":
             return  # Exit the function if the user enters "exit"
         
