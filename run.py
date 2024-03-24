@@ -195,7 +195,7 @@ def use_stock(inventory_sheet):
         cell = inventory_sheet.find(item_name)
         
         if cell:
-            current_amount = int(inventory_sheet.cell(cell.row, cell.col + 1).value)
+            current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
             
             if current_amount >= amount_to_use:
                 new_amount = current_amount - amount_to_use
