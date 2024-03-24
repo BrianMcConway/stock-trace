@@ -39,7 +39,7 @@ def main_menu():   # Main Menu
         print("Use Stock Items")
         use_stock_menu()
     else: 
-        print("Invalid Choice. Please enter a number between 1 & 3") # add letters as invalid choice
+        print("Invalid Choice. Please enter a number between 1 & 3\n ") # add letters as invalid choice
     
 def submenu_current(): # Submenu for current stock
     while True:
@@ -61,7 +61,7 @@ def submenu_current(): # Submenu for current stock
             data = meat_fish.get_all_values()
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            input("Press any key to return to the Current Stock Menu\n")
+            input("Press any key to return to the Current Stock Menu\n ")
         elif option == 2:
             print("----------------------------------")
             print("Fruit & Veg")
@@ -69,7 +69,7 @@ def submenu_current(): # Submenu for current stock
             data = fruit_veg.get_all_values()
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            input("Press any key to return to the Current Stock Menu\n")
+            input("Press any key to return to the Current Stock Menu\n ")
         elif option == 3:
             print("----------------------------------")
             print("Dry Goods")
@@ -77,15 +77,15 @@ def submenu_current(): # Submenu for current stock
             data = dry_goods.get_all_values()
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            input("Press any key to return to the Current Stock Menu\n")
+            input("Press any key to return to the Current Stock Menu\n ")
         elif option == 4:
             print("----------------------------------")
             print("Chilled Goods")
-            print("----------------------------------\n")
+            print("----------------------------------\n ")
             data = chilled_goods.get_all_values()
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            input("Press any key to return to the Current Stock Menu\n")
+            input("Press any key to return to the Current Stock Menu\n ")
         elif option == 5:
             print("----------------------------------")
             print("Frozen Items")
@@ -93,13 +93,13 @@ def submenu_current(): # Submenu for current stock
             data = frozen_items.get_all_values()
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            input("Press any key to return to the Current Stock Menu\n")
+            input("Press any key to return to the Current Stock Menu\n ")
         elif option == 6:
             print("Return to Main Menu")
             main_menu()
             break
         else: 
-            print("Invalid Choice. Please enter a number between 1 & 6")
+            print("Invalid Choice. Please enter a number between 1 & 6: \n")
             
 def input_new_menu():
     while True:
@@ -129,7 +129,7 @@ def input_new_menu():
             main_menu()
             break
         else:
-            print("Invalid Choice. Please enter a number between 1 & 6")
+            print("Invalid Choice. Please enter a number between 1 & 6\n ")
             
 def add_stock(inventory_sheet):
     while True:
@@ -137,7 +137,7 @@ def add_stock(inventory_sheet):
         if item_name == "exit":
             return  # Exit the function if the user enters "exit"
         
-        amount_to_add = int(input("Please enter the amount to add: "))
+        amount_to_add = int(input("Please enter the amount to add:\n "))
         
         cell = inventory_sheet.find(item_name)
         
@@ -165,7 +165,7 @@ def use_stock_menu():
         print("6. Return to Main Menu")
         print("----------------------------------\n")
         
-        option = input("Please select an option from 1-6: \n")
+        option = input("Please select an option from 1-6:\n ")
         
         if option == '1':
             use_stock(meat_fish)
@@ -182,7 +182,7 @@ def use_stock_menu():
             main_menu()
             break
         else:
-            print("Invalid Choice. Please enter a number between 1 & 6")
+            print("Invalid Choice. Please enter a number between 1 & 6\n ")
             
 def use_stock(inventory_sheet):
     while True:
@@ -190,7 +190,7 @@ def use_stock(inventory_sheet):
         if item_name == "exit":
             return  # Exit the function if the user enters "exit"
         
-        amount_to_use = int(input("Please enter the amount to use: "))
+        amount_to_use = int(input("Please enter the amount to use:\n "))
         
         cell = inventory_sheet.find(item_name)
         
