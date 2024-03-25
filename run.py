@@ -25,14 +25,100 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+patterns = {
+    's': [
+        ' █████ ',
+        '█      ',
+        ' █████ ',
+        '     █ ',
+        ' █████ '
+    ],
+    't': [
+        '███████',
+        '   █   ',
+        '   █   ',
+        '   █   ',
+        '   █   '
+    ],
+    'o': [
+        ' █████ ',
+        '█     █',
+        '█     █',
+        '█     █',
+        ' █████ '
+    ],
+    'c': [
+        ' █████ ',
+        '█      ',
+        '█      ',
+        '█      ',
+        ' █████ '
+    ],
+    'k': [
+        '█    █ ',
+        '█   █  ',
+        '███    ',
+        '█   █  ',
+        '█    █ '
+    ],
+    'r': [
+        '████   ',
+        '█    █ ',
+        '████   ',
+        '█   █  ',
+        '█    █ '
+    ],
+    'a': [
+        '  ███  ',
+        ' █   █ ',
+        ' █████ ',
+        '█     █',
+        '█     █'
+    ],
+    'e': [
+        '█████ ',
+        '█     ',
+        '█████ ',
+        '█     ',
+        '█████ '
+    ]
+}
+
+# Function to build a word using the patterns
+def build_word(word):
+    for i in range(5):  # Iterate over each line of the word
+        line = ''
+        for letter in word:
+            pattern = patterns[letter.lower()]
+            line += pattern[i] + '  '  # Add spaces between letters
+        print(line)
+
+
 # Welcome message
-print("----------------------------------\n")
-print("WELCOME TO STOCK-TRACE\n")
-print("----------------------------------\n")
+def welcome_message():
+    clear_screen()
+    
+    print("----------------------------------\n")
+
+    words = ["Stock", "Trace"]
+
+    for word in words:
+        build_word(word)
+        
+        print()  # Add an empty line between words
+
+    print("----------------------------------\n")
+    print("WELCOME TO STOCK TRACE\n")
+    print("----------------------------------\n")
+
+    input("Press Enter to go to the main menu\n")
+
+
 
 
 # Main Menu
 def main_menu():
+    clear_screen()
     print("----------------------------------\n")
     print("1. Current Stock")
     print("2. Input New Items")
@@ -241,4 +327,5 @@ def use_stock(inventory_sheet):
             print(f"Item '{item_name}' not found in the category.")
 
 
+welcome_message()
 main_menu()
