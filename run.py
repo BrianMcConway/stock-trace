@@ -18,17 +18,21 @@ dry_goods = SHEET.worksheet("dry_goods")
 chilled_goods = SHEET.worksheet('chilled_goods')
 frozen_items = SHEET.worksheet('frozen_items')
 
-print("----------------------------------\n") # Welcome message
+# Welcome message
+print("----------------------------------\n")
 print("WELCOME TO STOCK-TRACE\n")
 print("----------------------------------\n")
 
-def main_menu():   # Main Menu
+
+# Main Menu
+def main_menu():
     print("----------------------------------\n")
     print("1. Current Stock")
     print("2. Input New Items")
     print("3. Use Stock Items\n")
-    print("----------------------------------\n") 
-    option = int(input("Please select an option from 1-3: \n")) # Input main menu options
+    print("----------------------------------\n")
+    # Input main menu options
+    option = int(input("Please select an option from 1-3: \n"))
     if option == 1:
         print("Current Stock:")
         submenu_current()
@@ -38,10 +42,12 @@ def main_menu():   # Main Menu
     elif option == 3:
         print("Use Stock Items")
         use_stock_menu()
-    else: 
-        print("Invalid Choice!\n Please enter a number between 1 & 3\n") # add letters as invalid choice
-    
-def submenu_current(): # Submenu for current stock
+    else:
+        print("Invalid Choice!\n Please enter a number between 1 & 3\n")
+
+
+# Submenu for current stock
+def submenu_current():
     while True:
         print("----------------------------------\n")
         print("1. Meat & Fish")
@@ -51,9 +57,9 @@ def submenu_current(): # Submenu for current stock
         print("5. Frozen Items")
         print("6. Return to Main Menu\n")
         print("----------------------------------\n")
-        
-        option = int(input("Please select an option from 1-6: \n")) # Input for submenu current stock
-        
+# Input for submenu current stock
+        option = int(input("Please select an option from 1-6: \n"))
+
         if option == 1:
             print("----------------------------------")
             print("Meat & Fish")
@@ -98,9 +104,10 @@ def submenu_current(): # Submenu for current stock
             print("Return to Main Menu")
             main_menu()
             break
-        else: 
+        else:
             print("Invalid Choice!\n Please enter a number between 1 & 6:\n")
-            
+
+
 def input_new_menu():
     while True:
         print("----------------------------------\n")
@@ -111,9 +118,9 @@ def input_new_menu():
         print("5. Frozen Items")
         print("6. Return to Main Menu")
         print("----------------------------------\n")
-        
+
         option = input("Please select an option from 1-6:\n")
-        
+
         if option == '1':
             add_stock(meat_fish)
         elif option == '2':
@@ -130,30 +137,30 @@ def input_new_menu():
             break
         else:
             print("Invalid Choice. Please enter a number between 1 & 6\n")
-            
+
+
 def add_stock(inventory_sheet):
     while True:
-        item_name = input("Please enter item name,\nor type 'exit' to go back to menu:\n").lower()  # Convert input to lowercase
+        item_name = input("Please enter item name,\nor type 'exit' to go back to menu:\n").lower()
         if item_name == "exit":
             return  # Exit the function if the user enters "exit"
-        
+
         amount_to_add = int(input("Please enter the amount to add:\n"))
-        
+
         cell = inventory_sheet.find(item_name)
-        
+
         if cell:
             current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
-            
+
             new_amount = current_amount + amount_to_add
-            
+
             inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
-            
+
             print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
         else:
             print(f"Item '{item_name}' not found in the category.")
-    
 
-      
+
 def use_stock_menu():
     while True:
         print("----------------------------------\n")
@@ -164,9 +171,9 @@ def use_stock_menu():
         print("5. Frozen Items")
         print("6. Return to Main Menu")
         print("----------------------------------\n")
-        
+
         option = input("Please select an option from 1-6:\n")
-        
+
         if option == '1':
             use_stock(meat_fish)
         elif option == '2':
@@ -183,20 +190,21 @@ def use_stock_menu():
             break
         else:
             print("Invalid Choice. Please enter a number between 1 & 6:\n")
-            
+
+
 def use_stock(inventory_sheet):
     while True:
         item_name = input("Please enter item name,\nor type 'exit' to go back to menu:\n").lower()
         if item_name == "exit":
             return  # Exit the function if the user enters "exit"
-        
+
         amount_to_use = int(input("Please enter the amount to use:\n"))
-        
+
         cell = inventory_sheet.find(item_name)
-        
+
         if cell:
             current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
-            
+
             if current_amount >= amount_to_use:
                 new_amount = current_amount - amount_to_use
                 inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
@@ -204,7 +212,7 @@ def use_stock(inventory_sheet):
             else:
                 print("Error: Insufficient stock.")
         else:
-            print(f"Item '{item_name}' not found in the category.")  
-        
-main_menu()
+            print(f"Item '{item_name}' not found in the category.")
 
+
+main_menu()
