@@ -75,7 +75,8 @@ def submenu_current():
             print("----------------------------------\n")
             data = meat_fish.get_all_values()
             for row in data:
-                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
+                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
+            print("----------------------------------\n")
             input("Press 'Enter' to return to the Current Stock Menu\n")
             clear_screen()
         elif option == 2:
@@ -85,7 +86,8 @@ def submenu_current():
             print("----------------------------------\n")
             data = fruit_veg.get_all_values()
             for row in data:
-                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
+                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
+            print("----------------------------------\n")
             input("Press 'Enter' to return to the Current Stock Menu\n")
             clear_screen()
         elif option == 3:
@@ -95,7 +97,8 @@ def submenu_current():
             print("----------------------------------\n")
             data = dry_goods.get_all_values()
             for row in data:
-                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
+                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
+            print("----------------------------------\n")
             input("Press 'Enter' to return to the Current Stock Menu\n")
             clear_screen()
         elif option == 4:
@@ -105,7 +108,8 @@ def submenu_current():
             print("----------------------------------\n ")
             data = chilled_goods.get_all_values()
             for row in data:
-                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
+                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
+            print("----------------------------------\n")
             input("Press 'Enter' to return to the Current Stock Menu\n")
             clear_screen()
         elif option == 5:
@@ -115,7 +119,8 @@ def submenu_current():
             print("----------------------------------\n")
             data = frozen_items.get_all_values()
             for row in data:
-                print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
+                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
+            print("----------------------------------\n")
             input("Press 'Enter' to return to the Current Stock Menu\n")
             clear_screen()
         elif option == 6:
