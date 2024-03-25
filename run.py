@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import os
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -18,6 +19,12 @@ dry_goods = SHEET.worksheet("dry_goods")
 chilled_goods = SHEET.worksheet('chilled_goods')
 frozen_items = SHEET.worksheet('frozen_items')
 
+
+#OS to clear screen
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 # Welcome message
 print("----------------------------------\n")
 print("WELCOME TO STOCK-TRACE\n")
@@ -32,7 +39,7 @@ def main_menu():
     print("3. Use Stock Items\n")
     print("----------------------------------\n")
     # Input main menu options
-    option = int(input("Please select an option from 1-3: \n"))
+    option = int(input("Please select an option from 1-3:\n"))
     if option == 1:
         print("Current Stock:")
         submenu_current()
@@ -48,6 +55,7 @@ def main_menu():
 
 # Submenu for current stock
 def submenu_current():
+    clear_screen()
     while True:
         print("----------------------------------\n")
         print("1. Meat & Fish")
@@ -58,9 +66,10 @@ def submenu_current():
         print("6. Return to Main Menu\n")
         print("----------------------------------\n")
 # Input for submenu current stock
-        option = int(input("Please select an option from 1-6: \n"))
+        option = int(input("Please select an option from 1-6:\n"))
 
         if option == 1:
+            clear_screen()
             print("----------------------------------")
             print("Meat & Fish")
             print("----------------------------------\n")
@@ -68,7 +77,9 @@ def submenu_current():
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press 'Enter' to return to the Current Stock Menu\n")
+            clear_screen()
         elif option == 2:
+            clear_screen()
             print("----------------------------------")
             print("Fruit & Veg")
             print("----------------------------------\n")
@@ -76,7 +87,9 @@ def submenu_current():
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press 'Enter' to return to the Current Stock Menu\n")
+            clear_screen()
         elif option == 3:
+            clear_screen()
             print("----------------------------------")
             print("Dry Goods")
             print("----------------------------------\n")
@@ -84,7 +97,9 @@ def submenu_current():
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press 'Enter' to return to the Current Stock Menu\n")
+            clear_screen()
         elif option == 4:
+            clear_screen()
             print("----------------------------------")
             print("Chilled Goods")
             print("----------------------------------\n ")
@@ -92,7 +107,9 @@ def submenu_current():
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press 'Enter' to return to the Current Stock Menu\n")
+            clear_screen()
         elif option == 5:
+            clear_screen()
             print("----------------------------------")
             print("Frozen Items")
             print("----------------------------------\n")
@@ -100,8 +117,10 @@ def submenu_current():
             for row in data:
                 print("{:<30} {:<10} {:<10}".format(row[0], row[1], row[2]))
             input("Press 'Enter' to return to the Current Stock Menu\n")
+            clear_screen()
         elif option == 6:
             print("Return to Main Menu")
+            clear_screen()
             main_menu()
             break
         else:
@@ -109,6 +128,7 @@ def submenu_current():
 
 
 def input_new_menu():
+    clear_screen()
     while True:
         print("----------------------------------\n")
         print("1. Meat & Fish")
@@ -162,6 +182,7 @@ def add_stock(inventory_sheet):
 
 
 def use_stock_menu():
+    clear_screen()
     while True:
         print("----------------------------------\n")
         print("1. Meat & Fish")
