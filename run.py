@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import os
+from patterns import PATTERNS
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -25,71 +26,14 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-patterns = {
-    's': [
-        ' █████ ',
-        '█      ',
-        ' █████ ',
-        '     █ ',
-        ' █████ '
-    ],
-    't': [
-        '███████',
-        '   █   ',
-        '   █   ',
-        '   █   ',
-        '   █   '
-    ],
-    'o': [
-        ' █████ ',
-        '█     █',
-        '█     █',
-        '█     █',
-        ' █████ '
-    ],
-    'c': [
-        ' █████ ',
-        '█      ',
-        '█      ',
-        '█      ',
-        ' █████ '
-    ],
-    'k': [
-        '█    █ ',
-        '█   █  ',
-        '███    ',
-        '█   █  ',
-        '█    █ '
-    ],
-    'r': [
-        '████   ',
-        '█    █ ',
-        '████   ',
-        '█   █  ',
-        '█    █ '
-    ],
-    'a': [
-        '  ███  ',
-        ' █   █ ',
-        ' █████ ',
-        '█     █',
-        '█     █'
-    ],
-    'e': [
-        '█████ ',
-        '█     ',
-        '█████ ',
-        '█     ',
-        '█████ '
-    ]
-}
+
 
 # Function to build a word using the patterns
 def build_word(word):
     for i in range(5):  # Iterate over each line of the word
         line = ''
         for letter in word:
-            pattern = patterns[letter.lower()]
+            pattern = PATTERNS[letter.lower()]
             line += pattern[i] + '  '  # Add spaces between letters
         print(line)
 
@@ -124,8 +68,20 @@ def main_menu():
     print("2. Input New Items")
     print("3. Use Stock Items\n")
     print("----------------------------------\n")
-    # Input main menu options
-    option = int(input("Please select an option from 1-3:\n"))
+    
+    while True:
+        # Input main menu options
+        option = input("Please select an option from 1-3:\n").strip()  # Trim leading and trailing whitespace
+        
+        if option.isdigit():
+            option = int(option)
+            if 1 <= option <= 3:
+                break
+            else:
+                print("Invalid Choice!\n Please enter a number between 1 & 3\n")
+        else:
+            print("Invalid Input!\n Please enter a number between 1 & 3\n")
+
     if option == 1:
         print("Current Stock:")
         submenu_current()
@@ -327,5 +283,7 @@ def use_stock(inventory_sheet):
             print(f"Item '{item_name}' not found in the category.")
 
 
-welcome_message()
-main_menu()
+if __name__ == '__main__':
+	welcome_message()
+	main_menu()
+
