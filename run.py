@@ -150,56 +150,68 @@ def menu_category(category_name, category_sheet):
 
 def input_new_menu():
     clear_screen()
+    print("----------------------------------\n")
+    print("1. Meat & Fish")
+    print("2. Fruit & Veg")
+    print("3. Dry Goods")
+    print("4. Chilled Goods")
+    print("5. Frozen Items")
+    print("6. Return to Main Menu")
+    print("----------------------------------\n")
+
     while True:
-        print("----------------------------------\n")
-        print("1. Meat & Fish")
-        print("2. Fruit & Veg")
-        print("3. Dry Goods")
-        print("4. Chilled Goods")
-        print("5. Frozen Items")
-        print("6. Return to Main Menu")
-        print("----------------------------------\n")
+        option = input("Please select an option from 1-6:\n").strip()
 
-        option = input("Please select an option from 1-6:\n")
-
-        if option == '1':
-            add_stock(meat_fish)
-        elif option == '2':
-            add_stock(fruit_veg)
-        elif option == '3':
-            add_stock(dry_goods)
-        elif option == '4':
-            add_stock(chilled_goods)
-        elif option == '5':
-            add_stock(frozen_items)
-        elif option == '6':
-            print("Return to Main Menu")
-            main_menu()
-            break
+        if option.isdigit():
+            option = int(option)
+            if 1 <= option <= 6:
+                if option == 1:
+                    add_stock(meat_fish)
+                elif option == 2:
+                    add_stock(fruit_veg)
+                elif option == 3:
+                    add_stock(dry_goods)
+                elif option == 4:
+                    add_stock(chilled_goods)
+                elif option == 5:
+                    add_stock(frozen_items)
+                elif option == 6:
+                    print("Returning to Main Menu")
+                    main_menu()
+                    break
+            else:
+                print("Invalid Choice. Please enter a number between 1 & 6\n")
         else:
-            print("Invalid Choice. Please enter a number between 1 & 6\n")
+            print("Invalid Input. Please enter a valid number between 1 & 6\n")
 
 
 def add_stock(inventory_sheet):
     while True:
-        item_name = input("Please enter item name,\nor type 'exit' to go back to menu:\n").lower()
+        item_name = input("Please enter item name, or type 'exit' to go back to the menu:\n").lower()
         if item_name == "exit":
+            input_new_menu()  # Display the menu again after exiting add_stock
             return  # Exit the function if the user enters "exit"
 
-        amount_to_add = int(input("Please enter the amount to add:\n"))
+        amount_to_add = input("Please enter the amount to add:\n").strip()
 
-        cell = inventory_sheet.find(item_name)
-
-        if cell:
-            current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
-
-            new_amount = current_amount + amount_to_add
-
-            inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
-
-            print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
+        if amount_to_add.isdigit():
+            amount_to_add = int(amount_to_add)
+            cell = inventory_sheet.find(item_name)
+            if cell:
+                current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
+                new_amount = current_amount + amount_to_add
+                inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
+                print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
+            else:
+                print(f"Item '{item_name}' not found in the category.")
+        elif amount_to_add.lower() == "exit":
+            input_new_menu()  # Display the menu again after exiting add_stock
+            return  # Exit the function if the user enters "exit"
         else:
-            print(f"Item '{item_name}' not found in the category.")
+            print("Invalid input for amount. Please enter a valid number.")
+
+
+
 
 
 def use_stock_menu():
