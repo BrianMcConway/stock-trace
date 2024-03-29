@@ -78,7 +78,7 @@ def main_menu():
             if 1 <= option <= 3:
                 break
             else:
-                print("Invalid Choice!\n Please enter a number between 1 & 3\n")
+                print("Invalid Input!\n Please enter a number between 1 & 3\n")
         else:
             print("Invalid Input!\n Please enter a number between 1 & 3\n")
 
@@ -98,80 +98,54 @@ def main_menu():
 # Submenu for current stock
 def submenu_current():
     clear_screen()
-    while True:
-        print("----------------------------------\n")
-        print("1. Meat & Fish")
-        print("2. Fruit & Veg")
-        print("3. Dry Goods")
-        print("4. Chilled Goods")
-        print("5. Frozen Items")
-        print("6. Return to Main Menu\n")
-        print("----------------------------------\n")
-# Input for submenu current stock
-        option = int(input("Please select an option from 1-6:\n"))
+    print("----------------------------------\n")
+    print("1. Meat & Fish")
+    print("2. Fruit & Veg")
+    print("3. Dry Goods")
+    print("4. Chilled Goods")
+    print("5. Frozen Items")
+    print("6. Return to Main Menu\n")
+    print("----------------------------------\n")
 
-        if option == 1:
-            clear_screen()
-            print("----------------------------------")
-            print("Meat & Fish")
-            print("----------------------------------\n")
-            data = meat_fish.get_all_values()
-            for row in data:
-                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            print("----------------------------------\n")
-            input("Press 'Enter' to return to the Current Stock Menu\n")
-            clear_screen()
-        elif option == 2:
-            clear_screen()
-            print("----------------------------------")
-            print("Fruit & Veg")
-            print("----------------------------------\n")
-            data = fruit_veg.get_all_values()
-            for row in data:
-                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            print("----------------------------------\n")
-            input("Press 'Enter' to return to the Current Stock Menu\n")
-            clear_screen()
-        elif option == 3:
-            clear_screen()
-            print("----------------------------------")
-            print("Dry Goods")
-            print("----------------------------------\n")
-            data = dry_goods.get_all_values()
-            for row in data:
-                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            print("----------------------------------\n")
-            input("Press 'Enter' to return to the Current Stock Menu\n")
-            clear_screen()
-        elif option == 4:
-            clear_screen()
-            print("----------------------------------")
-            print("Chilled Goods")
-            print("----------------------------------\n ")
-            data = chilled_goods.get_all_values()
-            for row in data:
-                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            print("----------------------------------\n")
-            input("Press 'Enter' to return to the Current Stock Menu\n")
-            clear_screen()
-        elif option == 5:
-            clear_screen()
-            print("----------------------------------")
-            print("Frozen Items")
-            print("----------------------------------\n")
-            data = frozen_items.get_all_values()
-            for row in data:
-                print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
-            print("----------------------------------\n")
-            input("Press 'Enter' to return to the Current Stock Menu\n")
-            clear_screen()
-        elif option == 6:
-            print("Return to Main Menu")
-            clear_screen()
-            main_menu()
-            break
+    while True: 
+        # Input for submenu current stock
+        option = input("Please select an option from 1-6:\n").strip()  # Trim leading and trailing whitespace
+
+        if option.isdigit():  # Check if input is a digit
+            option = int(option)
+            if 1 <= option <= 6:
+                if option == 1:
+                    menu_category("Meat & Fish", meat_fish)
+                elif option == 2:
+                    menu_category("Fruit & Veg", fruit_veg)
+                elif option == 3:
+                    menu_category("Dry Goods", dry_goods)
+                elif option == 4:
+                    menu_category("Chilled Goods", chilled_goods)
+                elif option == 5:
+                    menu_category("Frozen Items", frozen_items)
+                elif option == 6:
+                    clear_screen()
+                    main_menu()
+                    break  # Exit the submenu function
+            else:
+                print("Invalid Input!\nPlease enter a number between 1 and 6.\n")
         else:
-            print("Invalid Choice!\n Please enter a number between 1 & 6:\n")
+            print("Invalid Input!\nPlease enter a number between 1 and 6.\n")
+
+# Helper function to display category data
+def menu_category(category_name, category_sheet):
+    clear_screen()
+    print("----------------------------------")
+    print(category_name)
+    print("----------------------------------\n")
+    data = category_sheet.get_all_values()
+    for row in data:
+        print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
+    print("----------------------------------\n")
+    input("Press 'Enter' to return to the Current Stock Menu\n")
+    main_menu()  # Display the main menu after pressing Enter
+    clear_screen()
 
 
 def input_new_menu():
