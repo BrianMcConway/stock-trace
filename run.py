@@ -170,15 +170,15 @@ def input_new_menu():
             option = int(option)
             if 1 <= option <= 6:
                 if option == 1:
-                    add_stock(meat_fish)
+                    add_stock(meat_fish, "Meat & Fish")
                 elif option == 2:
-                    add_stock(fruit_veg)
+                    add_stock(fruit_veg, "Fruit & Veg")
                 elif option == 3:
-                    add_stock(dry_goods)
+                    add_stock(dry_goods, "Dry Goods")
                 elif option == 4:
-                    add_stock(chilled_goods)
+                    add_stock(chilled_goods, "Chilled Goods")
                 elif option == 5:
-                    add_stock(frozen_items)
+                    add_stock(frozen_items, "Frozen Items")
                 elif option == 6:
                     print("Returning to Main Menu")
                     main_menu()
@@ -188,10 +188,9 @@ def input_new_menu():
         else:
             print("Invalid Input. Please enter a valid number between 1 & 6\n")
 
-
-def add_stock(inventory_sheet):
+def add_stock(inventory_sheet, category_name):
     while True:
-        item_name = input("Please enter item name, or type 'exit' to go back to the menu:\n").lower()
+        item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to the menu:\n").lower()
         if item_name == "exit":
             input_new_menu()  # Display the menu again after exiting add_stock
             return  # Exit the function if the user enters "exit"
@@ -234,27 +233,32 @@ def use_stock_menu():
     while True:
         option = input("Please select an option from 1-6:\n").strip()
 
-        if option == '1':
-            use_stock(meat_fish)
-        elif option == '2':
-            use_stock(fruit_veg)
-        elif option == '3':
-            use_stock(dry_goods)
-        elif option == '4':
-            use_stock(chilled_goods)
-        elif option == '5':
-            use_stock(frozen_items)
-        elif option == '6':
-            print("Returning to Main Menu")
-            main_menu()
-            return
+        if option.isdigit():
+            option = int(option)
+            if 1 <= option <= 6:
+                if option == 1:
+                    use_stock(meat_fish, "Meat & Fish")
+                elif option == 2:
+                    use_stock(fruit_veg, "Fruit & Veg")
+                elif option == 3:
+                    use_stock(dry_goods, "Dry Goods")
+                elif option == 4:
+                    use_stock(chilled_goods, "Chilled Goods")
+                elif option == 5:
+                    use_stock(frozen_items, "Frozen Items")
+                elif option == 6:
+                    print("Returning to Main Menu")
+                    main_menu()
+                    return
+            else:
+                print("Invalid Choice. Please enter a number between 1 & 6:\n")
         else:
-            print("Invalid Choice. Please enter a number between 1 & 6:\n")
+            print("Invalid Input. Please enter a valid number between 1 & 6:\n")
 
 
-def use_stock(inventory_sheet):
+def use_stock(inventory_sheet, category_name):
     while True:
-        item_name = input("Please enter item name, or type 'exit' to go back to menu:\n").lower()
+        item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to menu:\n").lower()
         if item_name == "exit":
             use_stock_menu()  # Display the menu again after exiting use_stock
             return  # Exit the function if the user enters "exit"
