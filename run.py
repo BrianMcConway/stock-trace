@@ -114,14 +114,19 @@ def submenu_current():
             option = int(option)
             if 1 <= option <= 6:
                 if option == 1:
+                    clear_screen()
                     menu_category("Meat & Fish", meat_fish)
                 elif option == 2:
+                    clear_screen()
                     menu_category("Fruit & Veg", fruit_veg)
                 elif option == 3:
+                    clear_screen()
                     menu_category("Dry Goods", dry_goods)
                 elif option == 4:
+                    clear_screen()
                     menu_category("Chilled Goods", chilled_goods)
                 elif option == 5:
+                    clear_screen()
                     menu_category("Frozen Items", frozen_items)
                 elif option == 6:
                     clear_screen()
