@@ -24,10 +24,7 @@ View Google Sheets here: [Google Sheets](https://docs.google.com/spreadsheets/d/
 
 ## Features
 
-### Menu Options
-
-
-
+### Menu Options 
   
 **Main Menu**\
 The Main Menu consists of three options:
@@ -35,7 +32,7 @@ The Main Menu consists of three options:
 2. The user can proceed to the Input New Items Menu by inputting 2 & Enter.
 3. The user can proceed to the Use Stock Menu by inputting 3 & Enter.
 
-<img src="readme-docs/main-menu.png" alt="Image of 'How to Play' button" width="90%" height="auto">
+<img src="readme-docs/main-menu.png" alt="Image of 'How to Play' button" width="90%" height="auto">\
     
     
 
@@ -49,14 +46,34 @@ The Current Stock Menu Consists of six options:
 6. The user can return to the Main Menu by inputting 6 & Enter.
 
 
-<img src="readme-docs/current-stock-main.png" alt="Image of Current Stock Menu." width="90%" height="auto">  
+<img src="readme-docs/current-stock-main.png" alt="Image of Current Stock Menu." width="90%" height="auto">
     
 
 **Current Stock List screens**
 
+The Current Stock lists show the user the name, weight/volume, and current amount of each item held in stock. 
 
-<img src="readme-docs/audio-off.png" alt="Image of 'Audio muted' button" width="10%" height="auto">
-<img src="readme-docs/audio-on.png" alt="Image of 'Audio unmuted' button" width="9.8%" height="auto">
+- Meat & Fish list. Pressing Enter returns to the Current Stock menu.
+
+<img src="readme-docs/meat-fish-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+
+- Fruit & Veg list. Pressing Enter returns to the Current Stock menu.
+
+<img src="readme-docs/fruit-veg-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+
+- Dry Goods list. Pressing Enter returns to the Current Stock menu.
+
+<img src="readme-docs/dry-goods-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+
+- Chilled Goods list. Pressing Enter returns to the Current Stock menu.
+
+<img src="readme-docs/chilled-goods-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+
+- Chilled Goods list. Pressing Enter returns to the Current Stock menu.
+
+<img src="readme-docs/frozen-items-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+
+
 
 **Turns Counter**
 
