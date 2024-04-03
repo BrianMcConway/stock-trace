@@ -21,15 +21,20 @@ chilled_goods = SHEET.worksheet('chilled_goods')
 frozen_items = SHEET.worksheet('frozen_items')
 
 
-#OS to clear screen
 def clear_screen():
+    """
+    Clears the console screen.
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-
-
-# Function to build a word using the patterns
 def build_word(word):
+    """
+    Prints a word in ASCII art using predefined patterns.
+
+    Args:
+        word (str): The word to print.
+    """
     for i in range(5):  # Iterate over each line of the word
         line = ''
         for letter in word:
@@ -38,41 +43,36 @@ def build_word(word):
         print(line)
 
 
-# Welcome message
 def welcome_message():
+    """
+    Displays the welcome message.
+    """
     clear_screen()
-    
     print("--------------------------------------------------\n")
-
     words = ["Stock", "Trace"]
-
     for word in words:
         build_word(word)
-        
         print()  # Add an empty line between words
-
     print("--------------------------------------------------\n")
     print("WELCOME TO STOCK TRACE\n")
     print("--------------------------------------------------\n")
-
     input("Press Enter to go to the main menu\n")
 
 
-
-
-# Main Menu
 def main_menu():
+    """
+    Displays the main menu and handles user input.
+    """
     clear_screen()
     print("--------------------------------------------------\n")
     print("1. Current Stock")
     print("2. Input New Items")
     print("3. Use Stock Items\n")
     print("--------------------------------------------------\n")
-    
+
     while True:
-        # Input main menu options
-        option = input("Please select an option from 1-3:\n").strip()  # Trim leading and trailing whitespace
-        
+        option = input("Please select an option from 1-3:\n").strip()  # Trim
+
         if option.isdigit():
             option = int(option)
             if 1 <= option <= 3:
@@ -95,8 +95,10 @@ def main_menu():
         print("Invalid Choice!\n Please enter a number between 1 & 3\n")
 
 
-# Submenu for current stock
 def submenu_current():
+    """
+    Displays the submenu for current stock and handles user input.
+    """
     clear_screen()
     print("----------------------------------")
     print("Current Stock")
@@ -109,8 +111,8 @@ def submenu_current():
     print("6. Return to Main Menu\n")
     print("----------------------------------\n")
 
-    while True: 
-        option = input("Please select an option from 1-6:\n").strip() 
+    while True:
+        option = input("Please select an option from 1-6:\n").strip()
         if option.isdigit():
             option = int(option)
             if 1 <= option <= 6:
@@ -129,12 +131,19 @@ def submenu_current():
                     main_menu()
                     break
             else:
-                print("Invalid Input!\nPlease enter a number between 1 and 6.\n")
+                print(f"Invalid Input! Please enter a number between 1 and 6.")
         else:
             print("Invalid Input!\nPlease enter a number between 1 and 6.\n")
 
-# Helper function to display category data
+
 def menu_category(category_name, category_sheet):
+    """
+    Displays the items in a specific category.
+
+    Args:
+        category_name (str): The name of the category.
+        category_sheet (Worksheet): The worksheet containing the category data.
+    """
     clear_screen()
     print("----------------------------------")
     print(category_name)
@@ -147,10 +156,12 @@ def menu_category(category_name, category_sheet):
     clear_screen()
     submenu_current()  # Display the submenu current menu after pressing Enter
     clear_screen()
-    
 
 
 def input_new_menu():
+    """
+    Displays the menu for inputting new items and handles user input.
+    """
     clear_screen()
     print("--------------------------------------------------")
     print("Input New Items")
@@ -188,39 +199,57 @@ def input_new_menu():
         else:
             print("Invalid Input. Please enter a valid number between 1 & 6\n")
 
+
 def add_stock(inventory_sheet, category_name):
-    
-        clear_screen()
-        print("--------------------------------------------------")
-        print("Input New Items")
-        print("--------------------------------------------------\n")
-        while True:
-            item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to the menu:\n").lower()
-            if item_name == "exit":
-                input_new_menu()  # Display the menu again after exiting add_stock
-                return  # Exit the function if the user enters "exit"
+    """
+    Adds stock to a specific category.
 
-            amount_to_add = input("Please enter the amount to add:\n").strip()
+    Args:
+       inventory_sheet (Worksheet): Holds the inventory data.
 
-            if amount_to_add.isdigit():
-                amount_to_add = int(amount_to_add)
-                cell = inventory_sheet.find(item_name)
-                if cell:
-                    current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
-                    new_amount = current_amount + amount_to_add
-                    inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
-                    print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
-                else:
-                    print(f"Item '{item_name}' not found in the category.")
-            elif amount_to_add.lower() == "exit":
-                input_new_menu()  # Display the menu again after exiting add_stock
-                return  # Exit the function if the user enters "exit"
+        category_name (str): The name of the category.
+    """
+    clear_screen()
+    print("--------------------------------------------------")
+    print("Input New Items")
+    print("--------------------------------------------------\n")
+    while True:
+        item_name = input(
+         f"Enter {category_name} item name, "
+         f"or 'exit' to return to the menu:\n"
+        ).lower()
+
+        if item_name == "exit":
+            input_new_menu()  # Display the menu again after exiting add_stock
+            return  # Exit the function if the user enters "exit"
+
+        amount_to_add = input("Please enter the amount to add:\n").strip()
+
+        if amount_to_add.isdigit():
+            amount_to_add = int(amount_to_add)
+            cell = inventory_sheet.find(item_name)
+            if cell:
+                current_amount = int(
+                 inventory_sheet.cell(cell.row, cell.col + 2).value)
+
+                new_amount = current_amount + amount_to_add
+                inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
+                print(f"Added {amount_to_add} to {item_name}. "
+                      f"New amount: {new_amount}")
+
             else:
-                print("Invalid input for amount. Please enter a valid number.")
-
+                print(f"Item '{item_name}' not found in the category.")
+        elif amount_to_add.lower() == "exit":
+            input_new_menu()  # Display the menu again after exiting add_stock
+            return  # Exit the function if the user enters "exit"
+        else:
+            print("Invalid input for amount. Please enter a valid number.")
 
 
 def use_stock_menu():
+    """
+    Displays the menu for using stock items and handles user input.
+    """
     clear_screen()
     print("--------------------------------------------------")
     print("Use Stock Items")
@@ -256,46 +285,58 @@ def use_stock_menu():
             else:
                 print("Invalid Choice. Please enter a number between 1 & 6:\n")
         else:
-            print("Invalid Input. Please enter a valid number between 1 & 6:\n")
+            print("Invalid Input. "
+                  "Please enter a valid number between 1 & 6:\n")
 
 
 def use_stock(inventory_sheet, category_name):
-    
-        clear_screen()
-        print("--------------------------------------------------")
-        print("Use Stock Items")
-        print("--------------------------------------------------\n")
-        while True:
-            item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to menu:\n").lower()
-            if item_name == "exit":
-                use_stock_menu()  # Display the menu again after exiting use_stock
-                return  # Exit the function if the user enters "exit"
+    """
+    Uses stock from a specific category.
 
-            amount_to_use = input("Please enter the amount to use:\n")
+    Args:
+       inventory_sheet (Worksheet): Inventory data worksheet.
 
-            if amount_to_use.isdigit():
-                amount_to_use = int(amount_to_use)
-                cell = inventory_sheet.find(item_name)
-                if cell:
-                    current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
+        category_name (str): The name of the category.
+    """
+    clear_screen()
+    print("--------------------------------------------------")
+    print("Use Stock Items")
+    print("--------------------------------------------------\n")
+    while True:
+        item_name = input(
+         f"Please enter {category_name} item name, "
+         f"or type 'exit' to go back to menu:\n"
+        ).lower()
+        if item_name == "exit":
+            use_stock_menu()  # Display the menu again after exiting use_stock
+            return  # Exit the function if the user enters "exit"
 
-                    if current_amount >= amount_to_use:
-                        new_amount = current_amount - amount_to_use
-                        inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
-                        print(f"Used {amount_to_use} from {item_name}. New amount: {new_amount}")
-                    else:
-                        print("Error: Insufficient stock.")
+        amount_to_use = input("Please enter the amount to use:\n")
+
+        if amount_to_use.isdigit():
+            amount_to_use = int(amount_to_use)
+            cell = inventory_sheet.find(item_name)
+            if cell:
+                current_amount = int(
+                 inventory_sheet.cell(cell.row, cell.col + 2).value)
+
+                if current_amount >= amount_to_use:
+                    new_amount = current_amount - amount_to_use
+                    inventory_sheet.update_cell(
+                     cell.row, cell.col + 2, new_amount)
+                    print(f"Used {amount_to_use} from {item_name}. "
+                          f"New amount: {new_amount}")
                 else:
-                    print(f"Item '{item_name}' not found in the category.")
-            elif amount_to_use.lower() == "exit":
-                use_stock_menu()  # Display the menu again after exiting use_stock
-                return  # Exit the function if the user enters "exit"
+                    print("Error: Insufficient stock.")
             else:
-                print("Invalid input for amount. Please enter a valid number.")
-
+                print(f"Item '{item_name}' not found in the category.")
+        elif amount_to_use.lower() == "exit":
+            use_stock_menu()  # Display the menu again after exiting use_stock
+            return  # Exit the function if the user enters "exit"
+        else:
+            print("Invalid input for amount. Please enter a valid number.")
 
 
 if __name__ == '__main__':
     welcome_message()
     main_menu()
-
