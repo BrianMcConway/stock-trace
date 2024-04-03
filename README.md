@@ -55,7 +55,7 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 - Meat & Fish list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/meat-fish-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+<img src="readme-docs/meat-fish-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">
 
 - Fruit & Veg list. Pressing Enter returns to the Current Stock menu.
 
