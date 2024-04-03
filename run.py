@@ -146,8 +146,9 @@ def menu_category(category_name, category_sheet):
         print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
     print("----------------------------------\n")
     input("Press 'Enter' to return to the Current Stock Menu\n")
-    submenu_current()  # Display the submenu current menu after pressing Enter
     clear_screen()
+    submenu_current()  # Display the submenu current menu after pressing Enter
+    
 
 
 def input_new_menu():
