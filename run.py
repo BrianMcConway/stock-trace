@@ -189,29 +189,34 @@ def input_new_menu():
             print("Invalid Input. Please enter a valid number between 1 & 6\n")
 
 def add_stock(inventory_sheet, category_name):
-    while True:
-        item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to the menu:\n").lower()
-        if item_name == "exit":
-            input_new_menu()  # Display the menu again after exiting add_stock
-            return  # Exit the function if the user enters "exit"
+    
+        clear_screen()
+        print("----------------------------------")
+        print("Input New Items")
+        print("----------------------------------\n")
+        while True:
+            item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to the menu:\n").lower()
+            if item_name == "exit":
+                input_new_menu()  # Display the menu again after exiting add_stock
+                return  # Exit the function if the user enters "exit"
 
-        amount_to_add = input("Please enter the amount to add:\n").strip()
+            amount_to_add = input("Please enter the amount to add:\n").strip()
 
-        if amount_to_add.isdigit():
-            amount_to_add = int(amount_to_add)
-            cell = inventory_sheet.find(item_name)
-            if cell:
-                current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
-                new_amount = current_amount + amount_to_add
-                inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
-                print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
+            if amount_to_add.isdigit():
+                amount_to_add = int(amount_to_add)
+                cell = inventory_sheet.find(item_name)
+                if cell:
+                    current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
+                    new_amount = current_amount + amount_to_add
+                    inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
+                    print(f"Added {amount_to_add} to {item_name}. New amount: {new_amount}")
+                else:
+                    print(f"Item '{item_name}' not found in the category.")
+            elif amount_to_add.lower() == "exit":
+                input_new_menu()  # Display the menu again after exiting add_stock
+                return  # Exit the function if the user enters "exit"
             else:
-                print(f"Item '{item_name}' not found in the category.")
-        elif amount_to_add.lower() == "exit":
-            input_new_menu()  # Display the menu again after exiting add_stock
-            return  # Exit the function if the user enters "exit"
-        else:
-            print("Invalid input for amount. Please enter a valid number.")
+                print("Invalid input for amount. Please enter a valid number.")
 
 
 
@@ -257,33 +262,38 @@ def use_stock_menu():
 
 
 def use_stock(inventory_sheet, category_name):
-    while True:
-        item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to menu:\n").lower()
-        if item_name == "exit":
-            use_stock_menu()  # Display the menu again after exiting use_stock
-            return  # Exit the function if the user enters "exit"
+    
+        clear_screen()
+        print("----------------------------------")
+        print("Use Stock Items")
+        print("----------------------------------\n")
+        while True:
+            item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to menu:\n").lower()
+            if item_name == "exit":
+                use_stock_menu()  # Display the menu again after exiting use_stock
+                return  # Exit the function if the user enters "exit"
 
-        amount_to_use = input("Please enter the amount to use:\n")
+            amount_to_use = input("Please enter the amount to use:\n")
 
-        if amount_to_use.isdigit():
-            amount_to_use = int(amount_to_use)
-            cell = inventory_sheet.find(item_name)
-            if cell:
-                current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
+            if amount_to_use.isdigit():
+                amount_to_use = int(amount_to_use)
+                cell = inventory_sheet.find(item_name)
+                if cell:
+                    current_amount = int(inventory_sheet.cell(cell.row, cell.col + 2).value)
 
-                if current_amount >= amount_to_use:
-                    new_amount = current_amount - amount_to_use
-                    inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
-                    print(f"Used {amount_to_use} from {item_name}. New amount: {new_amount}")
+                    if current_amount >= amount_to_use:
+                        new_amount = current_amount - amount_to_use
+                        inventory_sheet.update_cell(cell.row, cell.col + 2, new_amount)
+                        print(f"Used {amount_to_use} from {item_name}. New amount: {new_amount}")
+                    else:
+                        print("Error: Insufficient stock.")
                 else:
-                    print("Error: Insufficient stock.")
+                    print(f"Item '{item_name}' not found in the category.")
+            elif amount_to_use.lower() == "exit":
+                use_stock_menu()  # Display the menu again after exiting use_stock
+                return  # Exit the function if the user enters "exit"
             else:
-                print(f"Item '{item_name}' not found in the category.")
-        elif amount_to_use.lower() == "exit":
-            use_stock_menu()  # Display the menu again after exiting use_stock
-            return  # Exit the function if the user enters "exit"
-        else:
-            print("Invalid input for amount. Please enter a valid number.")
+                print("Invalid input for amount. Please enter a valid number.")
 
 
 
