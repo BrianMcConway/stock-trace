@@ -98,6 +98,8 @@ def main_menu():
 # Submenu for current stock
 def submenu_current():
     clear_screen()
+    print("----------------------------------")
+    print("Current Stock")
     print("----------------------------------\n")
     print("1. Meat & Fish")
     print("2. Fruit & Veg")
@@ -109,7 +111,6 @@ def submenu_current():
 
     while True: 
         option = input("Please select an option from 1-6:\n").strip() 
-
         if option.isdigit():
             option = int(option)
             if 1 <= option <= 6:
@@ -148,6 +149,7 @@ def menu_category(category_name, category_sheet):
         print("{:<20} {:<20} {:<10}".format(row[0], row[1], row[2]))
     print("----------------------------------\n")
     input("Press 'Enter' to return to the Current Stock Menu\n")
+    clear_screen()
     submenu_current()  # Display the submenu current menu after pressing Enter
     clear_screen()
     
