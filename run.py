@@ -98,6 +98,8 @@ def main_menu():
 # Submenu for current stock
 def submenu_current():
     clear_screen()
+    print("----------------------------------")
+    print("Current Stock")
     print("----------------------------------\n")
     print("1. Meat & Fish")
     print("2. Fruit & Veg")
@@ -150,6 +152,8 @@ def menu_category(category_name, category_sheet):
 
 def input_new_menu():
     clear_screen()
+    print("----------------------------------")
+    print("Input New Items")
     print("----------------------------------\n")
     print("1. Meat & Fish")
     print("2. Fruit & Veg")
@@ -216,6 +220,8 @@ def add_stock(inventory_sheet):
 
 def use_stock_menu():
     clear_screen()
+    print("----------------------------------")
+    print("Use Stock Items")
     print("----------------------------------\n")
     print("1. Meat & Fish")
     print("2. Fruit & Veg")

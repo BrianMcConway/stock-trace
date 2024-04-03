@@ -51,7 +51,7 @@ The Current Stock Menu Consists of six options:
 
 **Current Stock List screens**
 
-The Current Stock lists show the user the name, weight/volume, and current amount of each item held in stock. 
+The Current Stock lists show the user the name, weight/volume, and current amount of each item held in stock as per Google Sheets.
 
 - Meat & Fish list. Pressing Enter returns to the Current Stock menu.
 
@@ -71,13 +71,13 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 - Chilled Goods list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/frozen-items-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+<img src="readme-docs/frozen-items-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">\
 
 
 
-**Turns Counter**
+**Input New Items**
 
-- The Turns counter will increase by one every time a move is made in the puzzle. This will be displayed in the pop-up window when the puzzle is solved.
+- The Input New Items menu displays the same 
 
 <img src="readme-docs\turns-counter.png" alt="image of turns counter" width="30%" height="auto">
 
