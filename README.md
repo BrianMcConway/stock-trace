@@ -81,7 +81,7 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 <img src="readme-docs\turns-counter.png" alt="image of turns counter" width="30%" height="auto">
 
-**End of Game Message**
+**Use Stock Items**
 
 - When the puzzle is solved, a pop-up message will congratulate you for solving the puzzle and let you know how many moves you made.
 
@@ -98,10 +98,6 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 - Future features will include recording of high scores, an audio alert when you complete the game (if audio is enabled), 
 
-## Typography and Color Scheme
-
-- The Honk font from Google Fonts will be used for this project Heading.
-- A custom color palette from Adobe Color will be used for this project. This color pallet consists of #3498E9 for the background, #E7EB09 for the yellow which transitions to red #DA3A8A in the heading and footer
 
     
     <img src="readme-docs/adobe-project-palette.png" alt="Adobe color pallet image." width="50%" height="auto">
@@ -129,41 +125,32 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 ## Testing
 
-- W3C Markup Validator, W3C CSS Validator & JS Hint were used to validate all code contained in the project. The final tests were completed without errors. 
-- Lighthouse developer tool was also used to gauge the performance of the project on desktop and mobile views. The desktop scored a 99, and the mobile test scored 72 for performance.
+- CI Python Linter
 
-    <img src="readme-docs/performance-desktop.png" alt="Performance score image desktop." width="27%" height="auto">
-    <img src="readme-docs/performance-mobile.png" alt="Performance score image mobile." width="25%" height="auto">
+<img src="readme-docs/ci-python-linter.png" alt="Code Institute Python Linter pass with zero warnings or errors." width="100%" height="auto">
 
-- All buttons and external links were tested manually to ensure there were no connection errors. The modals all open and close as expected, and external links open in a new page in the browser. 
-- The project was also tested with Google's dev tools to show responsiveness on different screen sizes, and also on different browsers.
-- Testing was done on several desktop and laptop computers, various mobile devices like the iPhone, Nokia, Samsung and Huawei to make sure that the navigation and external links were functioning correctly.
-- Family members, friends and colleagues also kindly tested the functionality and user experience at several stages of the projects development.
+- Lighthouse Desktop
+
+<img src="readme-docs/lighthouse-desktop.png" alt="Performance score image desktop." width="50%" height="auto">
+
+- Lighthouse Mobile
+
+<img src="readme-docs/lighthouse-mobile.png" alt="Performance score image mobile." width="50%" height="auto">
+
+- 
 
 ### Known Bugs
 
-- When refreshing the page, the win-modal appears for a fraction of a second on the reload. 
-- On mobile view, the picture tiles were flasing when selected to move. I removed this by add -webkit-tap-highlight-color: transparent; to the body CSS. This has removed the flashing but shows up as a warning on the validator. 
+- 
 
 ## Deployment
 
-- The code was written on VS Code desktop version, commits were commented and pushed to the relevant Github repository.
-- The site was deployed to GitHub pages. The steps to deploy are as follows:
-- In the GitHub repository, navigate to the Settings tab
-- From the source section drop-down menu, select the Master Branch
-- Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-
-The live link can be followed here - <https://brianmcconway.github.io/puppy-puzzle-game/>
+- 
 
 ## Credits
 
 **During this project I used:**
-- https://rocoderes.com/slide-puzzle-game-in-html-css-and-javascript/  for puzzle-board sertup and movement of puzzle pieces.
-- https://codeguppy.com/code.html?t=sliding_puzzle
- to help with the JavaScript for the movement of the puzzle pieces.
-- https://www.youtube.com/watch?v=o5ffh3KUaTM to help with the creation of modals.
--  I also used Perplexity & ChatGPT which referenced MDN Web Docs including: Event Handling, Dom Manipulation, Arrays & Functions in JavaScript, 
-- This Readme file template, for the suggested layout.
+- 
 
 ## Acknowledgements
 
