@@ -59,19 +59,19 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 - Fruit & Veg list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/fruit-veg-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+<img src="readme-docs/fruit-veg-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">
 
 - Dry Goods list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/dry-goods-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+<img src="readme-docs/dry-goods-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">
 
 - Chilled Goods list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/chilled-goods-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">
+<img src="readme-docs/chilled-goods-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">
 
 - Chilled Goods list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/frozen-items-list.png" alt="Image of 'Audio muted' button" width="30%" height="auto">\
+<img src="readme-docs/frozen-items-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">\
 
 
 
