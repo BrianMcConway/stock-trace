@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import os
+from subprocess import call
 from patterns import PATTERNS
 
 SCOPE = [
@@ -23,7 +24,7 @@ frozen_items = SHEET.worksheet('frozen_items')
 
 #OS to clear screen
 def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    _ = call('clear' if os.name == 'posix' else 'cls')
 
 
 
@@ -42,7 +43,7 @@ def build_word(word):
 def welcome_message():
     clear_screen()
     
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
 
     words = ["Stock", "Trace"]
 
@@ -51,9 +52,9 @@ def welcome_message():
         
         print()  # Add an empty line between words
 
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
     print("WELCOME TO STOCK TRACE\n")
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
 
     input("Press Enter to go to the main menu\n")
 
@@ -63,11 +64,11 @@ def welcome_message():
 # Main Menu
 def main_menu():
     clear_screen()
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
     print("1. Current Stock")
     print("2. Input New Items")
     print("3. Use Stock Items\n")
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
     
     while True:
         # Input main menu options
@@ -98,16 +99,16 @@ def main_menu():
 # Submenu for current stock
 def submenu_current():
     clear_screen()
-    print("----------------------------------")
+    print("--------------------------------------------------")
     print("Current Stock")
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
     print("1. Meat & Fish")
     print("2. Fruit & Veg")
     print("3. Dry Goods")
     print("4. Chilled Goods")
     print("5. Frozen Items")
     print("6. Return to Main Menu\n")
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
 
     while True: 
         # Input for submenu current stock
@@ -138,13 +139,13 @@ def submenu_current():
 # Helper function to display category data
 def menu_category(category_name, category_sheet):
     clear_screen()
-    print("----------------------------------")
+    print("--------------------------------------------------")
     print(category_name)
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
     data = category_sheet.get_all_values()
     for row in data:
-        print("{:<20} {:<10} {:<10}".format(row[0], row[1], row[2]))
-    print("----------------------------------\n")
+        print("{:<20} {:<20} {:<10}".format(row[0], row[1], row[2]))
+    print("--------------------------------------------------\n")
     input("Press 'Enter' to return to the Current Stock Menu\n")
     clear_screen()
     submenu_current()  # Display the submenu current menu after pressing Enter
@@ -153,16 +154,16 @@ def menu_category(category_name, category_sheet):
 
 def input_new_menu():
     clear_screen()
-    print("----------------------------------")
+    print("--------------------------------------------------")
     print("Input New Items")
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
     print("1. Meat & Fish")
     print("2. Fruit & Veg")
     print("3. Dry Goods")
     print("4. Chilled Goods")
     print("5. Frozen Items")
     print("6. Return to Main Menu")
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
 
     while True:
         option = input("Please select an option from 1-6:\n").strip()
@@ -192,9 +193,9 @@ def input_new_menu():
 def add_stock(inventory_sheet, category_name):
     
         clear_screen()
-        print("----------------------------------")
+        print("--------------------------------------------------")
         print("Input New Items")
-        print("----------------------------------\n")
+        print("--------------------------------------------------\n")
         while True:
             item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to the menu:\n").lower()
             if item_name == "exit":
@@ -221,20 +222,18 @@ def add_stock(inventory_sheet, category_name):
 
 
 
-
-
 def use_stock_menu():
     clear_screen()
-    print("----------------------------------")
+    print("--------------------------------------------------")
     print("Use Stock Items")
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
     print("1. Meat & Fish")
     print("2. Fruit & Veg")
     print("3. Dry Goods")
     print("4. Chilled Goods")
     print("5. Frozen Items")
     print("6. Return to Main Menu")
-    print("----------------------------------\n")
+    print("--------------------------------------------------\n")
 
     while True:
         option = input("Please select an option from 1-6:\n").strip()
@@ -265,9 +264,9 @@ def use_stock_menu():
 def use_stock(inventory_sheet, category_name):
     
         clear_screen()
-        print("----------------------------------")
+        print("--------------------------------------------------")
         print("Use Stock Items")
-        print("----------------------------------\n")
+        print("--------------------------------------------------\n")
         while True:
             item_name = input(f"Please enter {category_name} item name, or type 'exit' to go back to menu:\n").lower()
             if item_name == "exit":
