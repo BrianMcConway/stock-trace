@@ -1,7 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import os
-from subprocess import call
 from patterns import PATTERNS
 
 SCOPE = [
@@ -24,7 +23,7 @@ frozen_items = SHEET.worksheet('frozen_items')
 
 #OS to clear screen
 def clear_screen():
-    _ = call('clear' if os.name == 'posix' else 'cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 
@@ -99,22 +98,19 @@ def main_menu():
 # Submenu for current stock
 def submenu_current():
     clear_screen()
-    print("--------------------------------------------------")
-    print("Current Stock")
-    print("--------------------------------------------------\n")
+    print("----------------------------------\n")
     print("1. Meat & Fish")
     print("2. Fruit & Veg")
     print("3. Dry Goods")
     print("4. Chilled Goods")
     print("5. Frozen Items")
     print("6. Return to Main Menu\n")
-    print("--------------------------------------------------\n")
+    print("----------------------------------\n")
 
     while True: 
-        # Input for submenu current stock
-        option = input("Please select an option from 1-6:\n").strip()  # Trim leading and trailing whitespace
+        option = input("Please select an option from 1-6:\n").strip() 
 
-        if option.isdigit():  # Check if input is a digit
+        if option.isdigit():
             option = int(option)
             if 1 <= option <= 6:
                 if option == 1:
@@ -130,7 +126,7 @@ def submenu_current():
                 elif option == 6:
                     clear_screen()
                     main_menu()
-                    break  # Exit the submenu function
+                    break
             else:
                 print("Invalid Input!\nPlease enter a number between 1 and 6.\n")
         else:
@@ -139,16 +135,16 @@ def submenu_current():
 # Helper function to display category data
 def menu_category(category_name, category_sheet):
     clear_screen()
-    print("--------------------------------------------------")
+    print("----------------------------------")
     print(category_name)
-    print("--------------------------------------------------\n")
+    print("----------------------------------\n")
     data = category_sheet.get_all_values()
     for row in data:
         print("{:<20} {:<20} {:<10}".format(row[0], row[1], row[2]))
-    print("--------------------------------------------------\n")
+    print("----------------------------------\n")
     input("Press 'Enter' to return to the Current Stock Menu\n")
-    clear_screen()
     submenu_current()  # Display the submenu current menu after pressing Enter
+    clear_screen()
     
 
 
