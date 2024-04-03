@@ -1,12 +1,18 @@
 # Stock Trace
 
-<https://stock-trace-8ceccf662779.herokuapp.com/>
+View the app here: [Stock Trace](https://stock-trace-8ceccf662779.herokuapp.com/)\
+View Google Sheets here: [Google Sheets](https://docs.google.com/spreadsheets/d/1qIUw4Cs-FAEzoi18zY4VcJ_trZYqNWqI5AYZb930VtA/edit?usp=sharing)
 
-<img src="readme-docs/responsive-shot.png" alt="Image if responsiveness on different screens" width="70%" height="auto">
+<img src="readme-docs/stock-trace-logo.png" alt="Image of Stock Trace logo as seen on application." width="70%" height="auto">
 
 ## Intro
 
-- The purpose of this project is to create a fully functional back-end site that responds to users' interactions. In this case I have created a Command Line Interface (CLI) called 'Stock Trace', using Python. This application is designed for a method of adding, removing and monitoring stock levels, specifically food items/ingredients in this case. This application is designed more for large industrial type kitchens such as a hospital or factory canteen. The reason for this is that the food items can be signed out on the previous evening according to the menu for the next day.    
+- The purpose of this project is to create a fully functional back-end site that responds to users' interactions. In this case I have created a Command Line Interface (CLI) called 'Stock Trace', using Python. This application is designed for a method of adding, removing and monitoring stock levels, specifically food items/ingredients in this case. This application is designed more for large industrial type kitchens such as in a hospital, or a factory canteen. The reason for this is that in these environments, there is a better idea of the amount of food required so items can be signed out on the previous evening according to the menu for the next day.
+
+- Current stock levels of food items from can be viewed in real time.
+- New stock can be added to the relevant section when a delivery arrives. Unused items can also be added back to the inventory lists and is safe to do so.
+
+- The stock levels can also be monitored by persons outside of the physical kitchen, such as the kitchen manager and accounts.
 
 ## User Stories
 
@@ -14,29 +20,39 @@
 - As a user, I would like to be able to add to my stock levels when deliveries arrive.
 - As a user, I would like to be able to remove items from the available stock when required.
 - As a user, I would like to see these changes to stock levels reflected in the related Google Sheets.
-- As a user, I would like to be able to easily navigate the menus, and be notified ig have made incorrect choices.
+- As a user, I would like to be able to easily navigate the menus, and be notified if I have made incorrect choices.
 
 ## Features
 
 ### Menu Options
 
-- 
 
-  <img src="readme-docs/game-options.png" alt="Image of 'How to Play', 'New Game', and audio on/off buttons" width="20%" height="auto">
 
-**How to Play**
-- This button opens a pop-up window that contains the rules of the game. There is a 'Close' button at the bottom of the window to exit back to the game.
+  
+**Main Menu**\
+The Main Menu consists of three options:
+1. The user can proceed to the Current Stock Menu by inputting 1 & Enter.
+2. The user can proceed to the Input New Items Menu by inputting 2 & Enter.
+3. The user can proceed to the Use Stock Menu by inputting 3 & Enter.
 
-    <img src="readme-docs/how-to-play-img.png" alt="Image of 'How to Play' button" width="20%" height="auto">
-    <img src="readme-docs/how-to-play.png" alt="Image of 'How to Play' instructions" width="16.5%" height="auto">
+<img src="readme-docs/main-menu.png" alt="Image of 'How to Play' button" width="90%" height="auto">
+    
+    
 
-**New Game**
-- This button starts a new game at any time. You will be asked to confirm the request via a pop-up window where you can confirm or cancel the request.
+**Current Stock Menu**\
+The Current Stock Menu Consists of six options:
+1. The user can proceed to view the Meat & Fish stock list by inputting 1 & Enter.
+2. The user can proceed to view the Fruit& Veg stock list by inputting 2 & Enter.
+3. The user can proceed to view the Dry Goods stock list by inputting 3 & Enter.
+4. The user can proceed to view the Chilled Goods list by inputting 4 & Enter.
+5. The user can proceed to view the Frozen Items by inputting 5 & Enter.
+6. The user can return to the Main Menu by inputting 6 & Enter.
 
-    <img src="readme-docs/new-game-img.png" alt="Image of 'New Game' button" width="15%" height="auto">
-    <img src="readme-docs/new-game-confirm.png" alt="Image of 'New Game' confirmation button" width="14%" height="auto">
 
-**Audio on/off**
+<img src="readme-docs/current-stock-main.png" alt="Image of Current Stock Menu." width="90%" height="auto">  
+    
+
+**Current Stock List screens**
 
 
 <img src="readme-docs/audio-off.png" alt="Image of 'Audio muted' button" width="10%" height="auto">
