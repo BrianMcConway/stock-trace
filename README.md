@@ -86,7 +86,7 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 **Input New Items**
 
-- The Input New Items menu displays the same five list options, and a sixth option to return to the previous menu. A menu choice is made by enterning the relevant number selection and pressing Enter.
+- The Input New Items menu displays the same five list options, and a sixth option to return to the previous menu. A menu choice is made by entering the relevant number selection and pressing Enter.
 
 <img src="readme-docs/input-new-items.png" alt="image of turns counter" width="80%" height="auto">
 
@@ -129,7 +129,7 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 ## Future Features
 
 The possible future features with this application are:
-- Connecting this app to a well presented front-end display with dropdown menus and/or predictive text for item entry to speed up the entry process and reduce the possible amout of errors in entering stock item names. This app would be accessed though a designated tablet device which would make it portable.
+- Connecting this app to a well presented front-end display with drop-down menus and/or predictive text for item entry to speed up the entry process and reduce the possible amount of errors in entering stock item names. This app would be accessed though a designated tablet device which would make it portable.
 - A user login for each person authorized to use the app. Also, an administrator account.
 - Logging of ingoing/outgoing stock which contains dates, times, and person involved.
 - Recording food wastage at the end of day.
@@ -218,7 +218,8 @@ The possible future features with this application are:
 
 ### Known Bugs
 
-- I noticed that some of the current stock lists appeared to be not clearing when I deployed the project with Heroku. I altering my code several times without success. After contacting Tutor Support, I was informed that the lists that were appearing to not be cleared were longer than the the live console window, and only the visible data was being cleared. The issue lies with the CI template that was used for this project. For the purposes of this project, I have shortened my current stock lists to all fit inside the console window. 
+- I noticed that some of the current stock lists appeared to be not clearing when I deployed the project with Heroku. I altering my code several times without success. After contacting Tutor Support, I was informed that the lists that were appearing to not be cleared were longer than the live console window, and only the visible data was being cleared. The issue lies with the CI template that was used for this project. For the purposes of this project, I have shortened my current stock lists to all fit inside the console window.
+- To the best of my knowledge, there are no more bugs in my deployed application.
 
 ## Setup & Deployment
 
@@ -243,7 +244,7 @@ The possible future features with this application are:
 
 - In order to use the Google Sheets API, google-auth and gspread are required. These are imported by entering 'pip3 install gspread google-auth' into the console,
  then entering 'import gspread' & 'from google.oauth2.service_account import Credentials' into line 1 & 2 of the codespace.
- - I then copied in the relevant SCOPE provided as part of the Love Sandwiches walkthrough for the Identity and Access Managment configuration.
+ - I then copied in the relevant SCOPE provided as part of the Love Sandwiches walkthrough for the Identity and Access Management configuration.
  - I also imported Operating Systems API (os) for my clear screen functions, and Patterns for my welcome screen graphics.
 
  ### Deployment
@@ -252,8 +253,8 @@ The possible future features with this application are:
  - In the settings section, add the creds.json file to the config vars by naming it CREDS and copying the contents of the creds.json file into the value field. 
  - Add Python buildpack, then save changes.
  -Add node.js buildpack, then save changes. It is important to add the buildpacks in this order.
- - In the Deply section, select GitHub and confirm. Add repository name and select 'Search', then 'Connect' when the repository is found.
- - In this case I used the manual deployment option calles 'Deploy Branch'. I deployed my project in the earlier stages of development to see how it responded in relation to how my code responded in the workspace console.
+ - In the Deploy section, select GitHub and confirm. Add repository name and select 'Search', then 'Connect' when the repository is found.
+ - In this case I used the manual deployment option called 'Deploy Branch'. I deployed my project in the earlier stages of development to see how it responded in relation to how my code responded in the workspace console.
  - When the build log has completed and the app has successfully deployed, there is a message to show that this is the case and a button to click to view the live app.
 
 ## Credits
