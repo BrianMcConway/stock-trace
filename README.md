@@ -245,7 +245,7 @@ The possible future features with this application are:
 - In order to use the Google Sheets API, google-auth and gspread are required. These are imported by entering 'pip3 install gspread google-auth' into the console,
  then entering 'import gspread' & 'from google.oauth2.service_account import Credentials' into line 1 & 2 of the codespace.
  - I then copied in the relevant SCOPE provided as part of the Love Sandwiches walkthrough for the Identity and Access Management configuration.
- - I also imported Operating Systems API (os) for my clear screen functions, and Patterns for my welcome screen graphics.
+ - I also imported Operating Systems API (os) for my clear screen functions, and Patterns for my welcome screen graphics. This is stored in the patterns.py folder. 
 
  ### Deployment
  - Before deployment it is important to create a list of requirements to populate the requirements.txt file. this is done by 'inputting Pip3 freeze > requirements.txt' and Heroku will install the requirements into the application before the code is run. Remember to commit this change.
