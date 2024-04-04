@@ -254,15 +254,23 @@ The possible future features with this application are:
  -Add node.js buildpack, then save changes. It is important to add the buildpacks in this order.
  - In the Deply section, select GitHub and confirm. Add repository name and select 'Search', then 'Connect' when the repository is found.
  - In this case I used the manual deployment option calles 'Deploy Branch'. I deployed my project in the earlier stages of development to see how it responded in relation to how my code responded in the workspace console.
- - When the build log has completed and the app has successfully deployed, there is a message to show that this is the case and a button to click to view the live app
+ - When the build log has completed and the app has successfully deployed, there is a message to show that this is the case and a button to click to view the live app.
 
 ## Credits
 
-**During this project I used:**
-- 
+**During this project I took inspiration from:**
+- Love Sandwiches Walkthrough Project.
+- [Bakestock Project by Amy Richardson](https://github.com/amylour/BakeStock?tab=readme-ov-file#creation--deployment)
+- [NetworkChuck Python Course](https://www.youtube.com/watch?v=mRMmlo_Uqcs)
+
+I also used perplexity & ChatGpt which referenced: 
+- [python.org](https://docs.python.org/3/) 
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/python)
+- [Real Python](https://realpython.com/)
 
 ## Acknowledgements
 
+I would like to thank the following people: 
 - Friends, family and colleagues, for testing my project at every stage, and also for their feedback.
-- My Mentor for constructive feedback and direction.
-- Support from The Code Institute.
+- My Mentor Rohit for his guidance, constructive feedback, and direction.
+- Support from The Code Institute tutors along the way.
