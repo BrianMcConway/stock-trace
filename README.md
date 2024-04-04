@@ -220,8 +220,6 @@ The possible future features with this application are:
 
 - I noticed that some of the current stock lists appeared to be not clearing when I deployed the project with Heroku. I altering my code several times without success. After contacting Tutor Support, I was informed that the lists that were appearing to not be cleared were longer than the the live console window, and only the visible data was being cleared. The issue lies with the CI template that was used for this project. For the purposes of this project, I have shortened my current stock lists to all fit inside the console window. 
 
-- 
-
 ## Setup & Deployment
 
 ### Setup
@@ -249,8 +247,14 @@ The possible future features with this application are:
  - I also imported Operating Systems API (os) for my clear screen functions, and Patterns for my welcome screen graphics.
 
  ### Deployment
-
- - 
+ - Before deployment it is important to create a list of requirements to populate the requirements.txt file. this is done by 'inputting Pip3 freeze > requirements.txt' and Heroku will install the requirements into the application before the code is run. Remember to commit this change.
+ - Using Heroku to deploy this project as a mock terminal, I used the Create New App option, gave it the name of stock-trace and selected Europe as my region, then select Create App.
+ - In the settings section, add the creds.json file to the config vars by naming it CREDS and copying the contents of the creds.json file into the value field. 
+ - Add Python buildpack, then save changes.
+ -Add node.js buildpack, then save changes. It is important to add the buildpacks in this order.
+ - In the Deply section, select GitHub and confirm. Add repository name and select 'Search', then 'Connect' when the repository is found.
+ - In this case I used the manual deployment option calles 'Deploy Branch'. I deployed my project in the earlier stages of development to see how it responded in relation to how my code responded in the workspace console.
+ - When the build log has completed and the app has successfully deployed, there is a message to show that this is the case and a button to click to view the live app
 
 ## Credits
 
