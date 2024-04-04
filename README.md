@@ -139,14 +139,16 @@ The possible future features with this application are:
 
 ## Flowchart
 
+- The flowchart shows the logic I followed in the creation of this application.
+
    <img src="readme-docs/flow-chart-pp3.png" alt="Flowchart showing the logic of app navigation." width="90%" height="auto">
 
 ## Technology Used
 
 ### Language Used
 
-- HTML5 & JavaScript were provided as part of the Code Institute template for this project.
 - Python was the language I used to write my code for this project.
+- All other language was provided by the Code Institute in the template provided for this project.
 
 ### Programs, Libraries & Frameworks Used
 
@@ -154,17 +156,19 @@ The possible future features with this application are:
 - VS Code Desktop was used to write the code.
 - Gitpod was used for 
 - Lucidchart was used to create the flowchart provided.
-- 
 - Figma was used to design the wireframe for the project.
 - Github was used to store the project code after being pushed.
 
 ## Testing
 
 - I validated my code using the Code Institute Python Linter. The final testing shows a result of no errors or warnings. 
+- I have not included any other validations because all other code was provided as a template by the Code Institute. 
 
 <img src="readme-docs/ci-python-linter.png" alt="Code Institute Python Linter pass with zero warnings or errors." width="100%" height="auto">
 
 <br>
+
+## Manual Testing
 
 ### Test Cases: 
 
@@ -218,9 +222,35 @@ The possible future features with this application are:
 
 - 
 
-## Deployment
+## Setup & Deployment
 
-- 
+### Setup
+
+- To begin this project I created a new GitHub repository using the Code Institute's Python Essentials template. This was done by using the 'use this template' option, and then 'create new repository'. 
+- I named the repository stock-trace, and copied the url to Gitpod to confirm the workspace creation.
+- Using Gitpod, I open my workspace in VS Code desktop version and begin my project.
+
+### Google Sheets
+
+- Using my personal Google account, I set up a spreadsheet called stock-trace via the Google Cloud Platform and created five worksheets corresponding to my five categories mentioned above in my menu options.
+- To access the data for the purpose of my project I used an Application Programming Interface (API) called Google Drive. 
+- I then set up a Service Account and created a private credentials key in the form of a JSON file which was downloaded onto my computer. 
+
+### Credentials 
+
+- The JSON credentials file is then added to the opened VS Code workspace by dragging and dropping into the file section at the left side of the workspace. I renamed the file creds.json and added it to the .gitignore list for safety. This will ensure that none of the info is sent to GitHub when commits are made. 
+- The client email address is then copied from the creds.json file and pasted into the share section of the Google Sheets section at the top right of the screen. This allows the project to access and edit the data contained in the spreadsheet.
+
+### External Python Libraries
+
+- In order to use the Google Sheets API, google-auth and gspread are required. These are imported by entering 'pip3 install gspread google-auth' into the console,
+ then entering 'import gspread' & 'from google.oauth2.service_account import Credentials' into line 1 & 2 of the codespace.
+ - I then copied in the relevant SCOPE provided as part of the Love Sandwiches walkthrough for the Identity and Access Managment configuration.
+ - I also imported Operating Systems API (os) for my clear screen functions, and Patterns for my welcome screen graphics.
+
+ ### Deployment
+
+ - 
 
 ## Credits
 
