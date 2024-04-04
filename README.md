@@ -34,7 +34,7 @@ The Main Menu consists of three options:
 
 <img src="readme-docs/main-menu.png" alt="Image of 'How to Play' button" width="80%" height="auto">
     
-    
+<br>  
 
 **Current Stock Menu**
 The Current Stock Menu Consists of six options:
@@ -48,6 +48,7 @@ The Current Stock Menu Consists of six options:
 
 <img src="readme-docs/current-stock-main.png" alt="Image of Current Stock Menu." width="80%" height="auto">
     
+<br>
 
 **Current Stock List screens**
 
@@ -57,23 +58,31 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 <img src="readme-docs/meat-fish-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
 
+<br>
+
 - Fruit & Veg list. Pressing Enter returns to the Current Stock menu.
 
 <img src="readme-docs/fruit-veg-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
+
+<br>
 
 - Dry Goods list. Pressing Enter returns to the Current Stock menu.
 
 <img src="readme-docs/dry-goods-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
 
+<br>
+
 - Chilled Goods list. Pressing Enter returns to the Current Stock menu.
 
 <img src="readme-docs/chilled-goods-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
+
+<br>
 
 - Chilled Goods list. Pressing Enter returns to the Current Stock menu.
 
 <img src="readme-docs/frozen-items-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
 
-
+<br>
 
 **Input New Items**
 
@@ -81,9 +90,13 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 <img src="readme-docs/input-new-items.png" alt="image of turns counter" width="80%" height="auto">
 
+<br>
+
 - Input New Items screen. User is prompted input name of an existing stock item from the category they have currently selected, then press Enter to confirm. After that the user is prompted to enter the amount they wish to add, then press Enter to confirm. If the inputs are successful, the user will be give a confirmation message indicating what was added, how much was added, and the new stock level.
 
 <img src="readme-docs/input-new-items-input-confirm.png" alt="image of turns counter" width="80%" height="auto">
+
+<br>
 
 **Use Stock Items**
 
@@ -91,10 +104,27 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 <img src="readme-docs/use-stock-items-menu.png" alt="image of end of game message" width="80%" height="auto">
 
+<br>
+
 - Use Stock Items screen. User is prompted input name of an existing stock item from the category they have currently selected, then press Enter to confirm. After that the user is prompted to enter the amount they wish to use, then press Enter to confirm. If the inputs are successful, the user will be give a confirmation message indicating what was checked out, how much was checked out, and the new stock level.
 
 <img src="readme-docs/use-stock-items-input-confirm.png" alt="image of end of game message" width="80%" height="auto">
 
+<br>
+
+**Google Sheets**
+
+- The data used in the lists is stored in Google Sheets. The data updates when the user either adds or removes stock from the list. In this case the units of weight/volume remain the same. This is relevant to the real world example of a purchase order being in place with the supplier to provide the same unit of stock each time an order is made.
+
+<img src="readme-docs/sheets-shot-1.png" alt="image of end of game message" width="80%" height="auto">
+
+<br>
+
+- The data categories relevant to the menu categories displayed in the app are shown here separated into real-world sections. The sections are divided this way as to be more intuitive to the user to find the required menu option. 
+
+<img src="readme-docs/sheets-shot-2.png" alt="image of end of game message" width="80%" height="auto">
+
+<br>
 
 ## Future Features
 
@@ -105,6 +135,7 @@ The possible future features with this application are:
 - Recording food wastage at the end of day.
 - Recording of cooking times, food temperature, and fridge temperatures. This feature will reduce the amount of paper used, and comply with HACCP kitchen safety regulations. 
 - The administrator can add/remove items from the list according to menu changes and availability, also change the weight/volume of a unit of the item. This is currently only possible by editing directly through Google Sheets.
+- An alert message can be displayed when items go below a set amount to prompt the user to place a new order.
 
 ## Flowchart
 
@@ -133,35 +164,51 @@ The possible future features with this application are:
 
 <img src="readme-docs/ci-python-linter.png" alt="Code Institute Python Linter pass with zero warnings or errors." width="100%" height="auto">
 
+<br>
+
 ### Test Cases: 
 
 - When a user makes an invalid input in the main menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a string being entered instead of the required numerical input. 
 
 <img src="readme-docs/test-cases-pic-1.png" alt="Performance score image desktop." width="80%" height="auto">
 
+<br>
+
 - When a user makes an invalid input in the current stock menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a out of range number being input. This number is also a negative, which is not accepted.
 
 <img src="readme-docs/test-cases-pic-2.png" alt="Performance score image mobile." width="80%" height="auto">
+
+<br>
 
 - When a user makes an invalid input in the input new items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of an out of range number being input. 
 
 <img src="readme-docs/test-cases-pic-3.png" alt="Performance score image mobile." width="80%" height="auto">
 
+<br>
+
 - When a user makes an invalid input in the input new items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a negative value being input.
 
 <img src="readme-docs/test-cases-pic-4.png" alt="Performance score image mobile." width="80%" height="auto">
+
+<br>
 
 - When a user makes an invalid input in the input new items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a valid stock item being input to the wrong Google Sheets category list. 
 
 <img src="readme-docs/test-cases-pic-5.png" alt="Performance score image mobile." width="80%" height="auto">
 
+<br>
+
 - When a user makes an invalid input in the use stock items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of an attempt to check out more stock than is available at that time. 
 
 <img src="readme-docs/test-cases-pic-6.png" alt="Performance score image mobile." width="80%" height="auto">
 
+<br>
+
 - When a user makes an invalid input in the use stock items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a string being entered instead of a numerical input. 
 
 <img src="readme-docs/test-cases-pic-7.png" alt="Performance score image mobile." width="80%" height="auto">
+
+<br>
 
 - All of these test cases have been tested on all menus and item name/amount inputs across the app without encountering any issues. 
 
