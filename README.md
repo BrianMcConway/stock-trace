@@ -79,28 +79,31 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 - The Input New Items menu displays the same 
 
-<img src="readme-docs\turns-counter.png" alt="image of turns counter" width="30%" height="auto">
+<img src="readme-docs/input-new-items.png" alt="image of turns counter" width="50%" height="auto">
+
+- 
+
+<img src="readme-docs/input-new-items-input.png" alt="image of turns counter" width="50%" height="auto">
 
 **Use Stock Items**
 
-- When the puzzle is solved, a pop-up message will congratulate you for solving the puzzle and let you know how many moves you made.
+- The Use Stock Items menu 
 
-<img src="readme-docs/win-screen.png" alt="image of end of game message" width="20%" height="auto">
+<img src="readme-docs/use-stock-items-menu.png" alt="image of end of game message" width="50%" height="auto">
 
-### The Footer
+- 
 
-- The footer section includes links to the relevant social media sites for the puzzle. The links will open to a new tab to allow easy navigation for the user.
-- The footer is valuable to the user as it encourages them to keep connected via social media.
+<img src="readme-docs/use-stock-items-input.png" alt="image of end of game message" width="50%" height="auto">
 
-    <img src="readme-docs/footer.png" alt="image of website footer" width="65%" height="auto">
 
 ## Future Features
 
-- Future features will include recording of high scores, an audio alert when you complete the game (if audio is enabled), 
-
-
-    
-    <img src="readme-docs/adobe-project-palette.png" alt="Adobe color pallet image." width="50%" height="auto">
+The possible future features with this application are:
+- Connecting this app to a well presented front-end display with dropdown menus and/or predictive text for item entry to speed up the entry process and reduce the possible amout of errors in entering stock item names. This app would be accessed though a designated tablet device which would make it portable.
+- A user login for each person authorized to use the app. Also, an administrator account.
+- Logging of ingoing/outgoing stock which contains dates, times, and person involved.
+- Recording food wastage at the end of day.
+- Recording of cooking times, food temperature, and fridge temperatures. This feature will reduce the amount of paper used, and comply with HACCP kitchen safety regulations. 
 
 ## Flowchart
 
@@ -125,21 +128,45 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 ## Testing
 
-- CI Python Linter
+- I validated my code using the Code Institute Python Linter. The final testing shows a result of no errors or warnings. 
 
 <img src="readme-docs/ci-python-linter.png" alt="Code Institute Python Linter pass with zero warnings or errors." width="100%" height="auto">
 
-- Lighthouse Desktop
+### Test Cases: 
 
-<img src="readme-docs/lighthouse-desktop.png" alt="Performance score image desktop." width="50%" height="auto">
+- When a user makes an invalid input in the main menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a string being entered instead of the required numerical input. 
 
-- Lighthouse Mobile
+<img src="readme-docs/test-cases-pic-1.png" alt="Performance score image desktop." width="80%" height="auto">
 
-<img src="readme-docs/lighthouse-mobile.png" alt="Performance score image mobile." width="50%" height="auto">
+- When a user makes an invalid input in the current stock menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a out of range number being input. This number is also a negative, which is not accepted.
 
-- 
+<img src="readme-docs/test-cases-pic-2.png" alt="Performance score image mobile." width="80%" height="auto">
+
+- When a user makes an invalid input in the input new items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of an out of range number being input. 
+
+<img src="readme-docs/test-cases-pic-3.png" alt="Performance score image mobile." width="80%" height="auto">
+
+- When a user makes an invalid input in the input new items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a negative value being input.
+
+<img src="readme-docs/test-cases-pic-4.png" alt="Performance score image mobile." width="80%" height="auto">
+
+- When a user makes an invalid input in the input new items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a valid stock item being input to the wrong Google Sheets category list. 
+
+<img src="readme-docs/test-cases-pic-5.png" alt="Performance score image mobile." width="80%" height="auto">
+
+- When a user makes an invalid input in the use stock items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of an attempt to check out more stock than is available at that time. 
+
+<img src="readme-docs/test-cases-pic-6.png" alt="Performance score image mobile." width="80%" height="auto">
+
+- When a user makes an invalid input in the use stock items menu, they are notified with an error message. They are then prompted to re-enter a selection within the parameters shown. As seen below, the error message is shown because of a string being entered instead of a numerical input. 
+
+<img src="readme-docs/test-cases-pic-7.png" alt="Performance score image mobile." width="80%" height="auto">
+
+- All of these test cases have been tested on all menus and item name/amount inputs across the app without encountering any issues. 
 
 ### Known Bugs
+
+- I noticed that some of the current stock lists appeared to be not clearing when I deployed the project with Heroku. I altering my code several times without success. After contacting Tutor Support, I was informed that the lists that were appearing to not be cleared were longer than the the live console window, and only the visible data was being cleared. The issue lies with the CI template that was used for this project. For the purposes of this project, I have shortened my current stock lists to all fit inside the console window. 
 
 - 
 
