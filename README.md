@@ -32,11 +32,11 @@ The Main Menu consists of three options:
 2. The user can proceed to the Input New Items Menu by inputting 2 & Enter.
 3. The user can proceed to the Use Stock Menu by inputting 3 & Enter.
 
-<img src="readme-docs/main-menu.png" alt="Image of 'How to Play' button" width="90%" height="auto">\
+<img src="readme-docs/main-menu.png" alt="Image of 'How to Play' button" width="80%" height="auto">
     
     
 
-**Current Stock Menu**\
+**Current Stock Menu**
 The Current Stock Menu Consists of six options:
 1. The user can proceed to view the Meat & Fish stock list by inputting 1 & Enter.
 2. The user can proceed to view the Fruit& Veg stock list by inputting 2 & Enter.
@@ -46,7 +46,7 @@ The Current Stock Menu Consists of six options:
 6. The user can return to the Main Menu by inputting 6 & Enter.
 
 
-<img src="readme-docs/current-stock-main.png" alt="Image of Current Stock Menu." width="90%" height="auto">
+<img src="readme-docs/current-stock-main.png" alt="Image of Current Stock Menu." width="80%" height="auto">
     
 
 **Current Stock List screens**
@@ -55,45 +55,45 @@ The Current Stock lists show the user the name, weight/volume, and current amoun
 
 - Meat & Fish list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/meat-fish-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">
+<img src="readme-docs/meat-fish-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
 
 - Fruit & Veg list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/fruit-veg-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">
+<img src="readme-docs/fruit-veg-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
 
 - Dry Goods list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/dry-goods-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">
+<img src="readme-docs/dry-goods-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
 
 - Chilled Goods list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/chilled-goods-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">
+<img src="readme-docs/chilled-goods-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
 
 - Chilled Goods list. Pressing Enter returns to the Current Stock menu.
 
-<img src="readme-docs/frozen-items-list.png" alt="Image of 'Audio muted' button" width="50%" height="auto">\
+<img src="readme-docs/frozen-items-list.png" alt="Image of 'Audio muted' button" width="80%" height="auto">
 
 
 
 **Input New Items**
 
-- The Input New Items menu displays the same 
+- The Input New Items menu displays the same five list options, and a sixth option to return to the previous menu. A menu choice is made by enterning the relevant number selection and pressing Enter.
 
-<img src="readme-docs/input-new-items.png" alt="image of turns counter" width="50%" height="auto">
+<img src="readme-docs/input-new-items.png" alt="image of turns counter" width="80%" height="auto">
 
-- 
+- Input New Items screen. User is prompted input name of an existing stock item from the category they have currently selected, then press Enter to confirm. After that the user is prompted to enter the amount they wish to add, then press Enter to confirm. If the inputs are successful, the user will be give a confirmation message indicating what was added, how much was added, and the new stock level.
 
-<img src="readme-docs/input-new-items-input.png" alt="image of turns counter" width="50%" height="auto">
+<img src="readme-docs/input-new-items-input-confirm.png" alt="image of turns counter" width="80%" height="auto">
 
 **Use Stock Items**
 
-- The Use Stock Items menu 
+- The Use Stock Items menu displays the same six options, five categories and a sixth option to return to the previous menu. The user should input the relevant number and press Enter to confirm.
 
-<img src="readme-docs/use-stock-items-menu.png" alt="image of end of game message" width="50%" height="auto">
+<img src="readme-docs/use-stock-items-menu.png" alt="image of end of game message" width="80%" height="auto">
 
-- 
+- Use Stock Items screen. User is prompted input name of an existing stock item from the category they have currently selected, then press Enter to confirm. After that the user is prompted to enter the amount they wish to use, then press Enter to confirm. If the inputs are successful, the user will be give a confirmation message indicating what was checked out, how much was checked out, and the new stock level.
 
-<img src="readme-docs/use-stock-items-input.png" alt="image of end of game message" width="50%" height="auto">
+<img src="readme-docs/use-stock-items-input-confirm.png" alt="image of end of game message" width="80%" height="auto">
 
 
 ## Future Features
@@ -104,6 +104,7 @@ The possible future features with this application are:
 - Logging of ingoing/outgoing stock which contains dates, times, and person involved.
 - Recording food wastage at the end of day.
 - Recording of cooking times, food temperature, and fridge temperatures. This feature will reduce the amount of paper used, and comply with HACCP kitchen safety regulations. 
+- The administrator can add/remove items from the list according to menu changes and availability, also change the weight/volume of a unit of the item. This is currently only possible by editing directly through Google Sheets.
 
 ## Flowchart
 
